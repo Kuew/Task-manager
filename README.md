@@ -19,7 +19,12 @@ comment executer?
 dézipper dans votre localhost et c'est visualizez dans votre navigateur
 
 Browsers supported:
-- mozilla ...
-- chrome ...
-- Opera ...
-- ...
+
+- Firefox: 3.5
+- Chrome: 4+
+- Internet Explorer: 8+
+- Safari: 4+
+- Opera: 10.5+
+- iPhone: 2.0+
+- Android: 2.0+
+- and probably somthing else
