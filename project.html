@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PMAPI_projects</title>
+    <link rel="stylesheet" href="jquery.mobile-1.3.1.css" type="text/css" />
+      <link rel="stylesheet" href="datebox/jqm-datebox.min.css" type="text/css"/>
+      <link rel="stylesheet" href="datebox/jquery.mobile.simpledialog.min.css" type="text/css" />
+      <link rel="stylesheet" href="datebox/datebox.css" type="text/css" media="screen"/>
+      <link rel="stylesheet" href="pmapi.css" type="text/css" media="screen"/>
+      <script data-main="js/main" src="js/main.js"></script>
+  </head>
+  <body>
+    <div data-role="page" id="projects" data-theme="c">
+      <div data-role="header" data-mini="true" data-inline="true">
+	<div data-role="navbar"  data-iconpos="left">
+	  <a href="index.html" data-role='button' data-icon="arrow-u" data-rel="back" data-direction="reverse">Back</a>
+	</div>
+      </div>
+      <div data-role="content" id='pagecontent' data-theme='a'></div><!-- /content data-theme='a' -->
+      <div data-role="footer" class="ui-bar" data-mini="true" data-position="fixed">
+	<div data-role="controlgroup" data-type="horizontal"  >
+	  <a href="#" data-role="projectbutton" class="projectbutton" data-icon="arrow-u">Project</a>
+	  <a href="index.html" class="tasklistbutton ui-btn-active" data-icon="arrow-u" >Task</a>
+	  <a href="settings.html" data-role="button" class="settingsbutton" data-icon="gear">Settings</a>
+	</div>
+      </div>
+    </div><!-- /page -->
+</html>
