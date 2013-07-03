@@ -12,3 +12,12 @@ screens.
  
  For designing widgets, we need jquery mobiles, an awesome jquery based framework witch use html5, css3, jquery and javascript do
  define responsible widgets displayable on mobile browsers.
+
+
+comment executer?
+
+dézipper dans votre localhost et c'est visualizez dans votre navigateur
+
+Navigateurs supportés:
+-mozilla ...
+- chrome ...
