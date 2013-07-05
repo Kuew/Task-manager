@@ -55,8 +55,8 @@ define([], function () {
            "_id": "T-5444",
            "title": "Jquery mobile learning",
            "project": "Daily activity",
-           "begindate": "20/05/2013",
-           "enddate": "6/06/2013",
+           "begindate": "20/5/2013",
+           "enddate": "16/11/2013",
            "state": "following",
            "description": "some description ..."
          }, function (err, response) {
@@ -66,8 +66,8 @@ define([], function () {
            "_id": "T-5446",
            "title": "Create a jQuery Mobile Task Manager",
            "project": "Daily activity",
-           "begindate": "22/06/2013",
-           "enddate": "24/08/2013",
+           "begindate": "01/06/2013",
+           "enddate": "30/06/2013",
            "state": "started",
            "description": "task manager app with JQM"
          }, function (err, response) {
@@ -77,8 +77,8 @@ define([], function () {
            "_id": "T-5447",
            "title": "Going to the restaurent",
            "project": "Restaurent actions",
-           "begindate": "2/06/2013",
-           "enddate": "5/07/2013",
+           "begindate": "11/07/2013",
+           "enddate": "12/07/2013",
            "state": "complete",
            "description": "task on jQuery"
          }, function (err, response) {
@@ -88,8 +88,8 @@ define([], function () {
            "_id": "T-5448",
            "title": "Going to shopping",
            "project": "Weekend activity",
-           "begindate": "7/09/2013",
-           "enddate": "12/12/2013",
+           "begindate": "11/07/2013",
+           "enddate": "13/07/2013",
            "state": "complete",
            "description": "task on jQuery"
          }, function (err, response) {

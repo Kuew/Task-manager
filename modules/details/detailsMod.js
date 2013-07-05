@@ -5,7 +5,7 @@ define([], function(jio, jio_state, jio_project){
   var that = {};
 
   that.init = function (jio, jio_state,  jio_project){
-
+		
     function validator (){
        //console.log(document.getElementById("title").value);
       if(document.getElementById("title").value === "" ){
@@ -31,7 +31,7 @@ define([], function(jio, jio_state, jio_project){
         //console.log(start);
         //console.log(end);
         if(start > end){
-          alert("Check your dates please");
+          alert("Dates not allowing any time for this task");
           return false;
         }
       }
@@ -43,11 +43,11 @@ define([], function(jio, jio_state, jio_project){
         alert("Please, select a state");
         return false;
       }
-       if(document.getElementById("description").value === "" ){
+      /* if(document.getElementById("description").value === "" ){
         $("#description").attr('placeholder', 'THIS FIELD IS MANDATORY');
         $("#description").toggleClass( "required");
         return false;
-      }
+      }*/
     return true;
   };
 	
