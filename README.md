@@ -2,24 +2,27 @@ Task-manager
 ============
 
 ###Task manager web mobile application using jQuery Mobile###
+------------------------------------------------------------
+This is just a basic simple mobile web application, it should be displayed on computer, smartphones, iphone and Ipad. It is for managing task of a given project.
+In this project we are using the following web technologies:
+- HTML5 providing specifics tag and supported by mobiles browsers.
+- CSS3 with its media queries witch alows us to make responsive design
+- Javascript, jquery and jquery mobile witch is an excellent Framework for mobile application
+- requireJS, an API allowing to handle module loading and to optimise the browser use,
+- renderJS, API for rendering gadgets. A gadget is just a pure HTML5 file, including CSS and JS files
+- JIO, API for managing documents in JSON format in the local or foreign storage.
 
-This is just a basic simple mobile application, it should be displayed on computer, smartphones, iphone and Ipad.
-it for managing task of a gives activities.
-we use HTML5, CSS3 with its media queries witch alows us to maque responsive design, so to be able for displaying in differents sizes of
-screens.
- 
- It use localStore of HTML5 to persis datas in json format. jIO librairy is also use to perform exchange betwen the application and the localstorage
- 
- For designing widgets, we need jquery mobiles, an awesome jquery based framework witch use html5, css3, jquery and javascript do
- define responsible widgets displayable on mobile browsers.
+  STIP: No server language is used, JSON data are store in the HTML5 localStore. 
+  
+###How to run?###
+---------------------------------------------------------------
+ Just click on the above *Download zip* button or just click [download sources](https://github.com/marcellintabou/Task-manager/archive/master.zip) 
+ and unzip the folder in you localhost and run in your browser. To have a mobilen efect, you can resize your browser sceen from bigger to smaller
+ resolution and see how the application is displayed.
+Many functionalities are still to come. This is just the learning behaview. 
 
-
-comment executer?
-
-dézipper dans votre localhost et c'est visualizez dans votre navigateur
-
-Browsers supported:
-
+###Browsers supported:###
+-----------------------------------------------------------------------
 - Firefox: 3.5
 - Chrome: 4+
 - Internet Explorer: 8+
@@ -27,4 +30,4 @@ Browsers supported:
 - Opera: 10.5+
 - iPhone: 2.0+
 - Android: 2.0+
-- and probably somthing else
+- and probably something else.
