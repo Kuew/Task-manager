@@ -125,8 +125,11 @@
       if ($(this).attr("data-bound") === undefined) {
       var statevalue = $('#foostate').serialize().split('=');
           var str, state = decodeURI(statevalue[1].replace(/\+/g, '%20'));
-          var str;
-          ////////
+					state = state.trim();
+					if(!/^[a-z_ ]+$/i.test(state)){
+						alert("Carractere accepté: [a - z, A - Z_]");
+						return false;
+					}
           jio_state.allDocs(
             { "query":{
               "query": "_id: = %",
@@ -203,8 +206,13 @@
         
         $(document).on("click", ".confirmaddproject", function (e, data) {
           if ($(this).attr("data-bound") === undefined) {
-          var projectvalue = $('#fooproject').serialize().split('=');
-          var str, project = decodeURI(projectvalue[1].replace(/\+/g, '%20'));
+          var str, projectvalue = $('#fooproject').serialize().split('='),
+          project = decodeURI(projectvalue[1].replace(/\+/g, '%20'));
+					project = project.trim();
+					if(!/^[a-z_ ]+$/i.test(project)){
+						alert("Carractere accepté: [a - z, A - Z_]");
+						return false;
+					}
           jio_project.allDocs(
             { "query":{
                   "query": "_id: = %",

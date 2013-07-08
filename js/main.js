@@ -5,7 +5,7 @@
     //  waitSeconds :  (IS_LOCAL? 10 : 45),
             paths: {
               //jquery and jqm plugin
-                          jquery:      "plugins/jquery/jquery-1.8.3",
+                 jquery:      "plugins/jquery/jquery-1.8.3",
                  jqm:         "plugins/jquerymobile/jquery.mobile-1.3.1",
                  //datebox plugin
                  dateboxCoreMin:    "plugins/datebox/jqm-datebox.core.min",
@@ -14,6 +14,7 @@
                  dbxI18nEnUsUtf: "plugins/datebox/jqm.datebox.i18n.en_US.utf8",
                  simpledialogMin:   "plugins/datebox/jqm.simpledialog.min",
                  gpretty_prettify:  "plugins/datebox/gpretty_prettify",
+                 renderjs:   "plugins/renderjs/renderjs",
                  //jio plugins
                  jio: "plugins/jio/jio",
                  md5: "plugins/jio/md5",
@@ -42,13 +43,15 @@
               "dbxI18nEnUsUtf": {deps: ["dateboxCoreMin"]},
               "dbxModeDateboxMin": {deps: ["dateboxCoreMin"]},
               "dbxModeCalboxMin": {deps: ["dateboxCoreMin"]},
+              "renderjs": {deps: ["jquery", "jio", "md5", "localstorage", "complex_queries"], exports: "RenderJs"},
               "overrides": {deps: ["jquery"]}
+              
             }
   });
   // use almond when building into a single file for phonegap
   define(
     [ //needed module wether the user start in index|detail|projetc html
-                "jquery",
+         "jquery",
          "jqm",
          "dateboxCoreMin",
          "dbxModeDateboxMin",
@@ -56,6 +59,7 @@
          "dbxI18nEnUsUtf",
          "simpledialogMin",
          "gpretty_prettify",
+         "renderjs",
          "jio",
          "md5",
          "response",

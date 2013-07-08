@@ -3,6 +3,10 @@ define([], function () {
   "use strict";
   var that = {};
   that.start = function () {
+    jQuery.extend(jQuery.mobile.datebox.prototype.options, {
+    'overrideDateFormat': '%d/%m/%Y',
+    'overrideHeaderFormat': '%d/%m/%Y'
+  });
     // 1- create a new jio (type = localStorage)
       var jio = jIO.newJio({
         "type": "local",

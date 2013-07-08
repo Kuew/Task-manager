@@ -216,7 +216,7 @@ label.ui-select {
     background:none repeat scroll 0 0 ;
     border: 2px solid gray;
     text-align:center;
-    width: 40%;
+    width: 37%;
     margin-top:30px;
     margin-bottom:15px;
     margin-right:;
@@ -428,6 +428,16 @@ color:red;
 #editfoo input.error {
 border:1px solid red;
 }
-
-
-
+.ui-disabled {
+	border: 1px solid;
+	z-index: 1;
+}
+.ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
+	width: 7.5em;
+}
+/*
+.datelabel{
+	display: inline-block;
+	width: 8em!important;
+}
+*/

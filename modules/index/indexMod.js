@@ -122,7 +122,7 @@
 
     //On enregistre le nouveau status du projet à partir du popup
     $(document).on("click", ".confirm", function (e, data) {
-      if ($(this).attr("data-bound") === undefined) {
+       if ($(this).attr("data-bound") === undefined) {
       var r;
       if (!(document.getElementById("select-state").value === "#")) {
         r = confirm("Are you sure, the status of task " + document.getElementById("select-state").attributes["data-id"].value + " should change to " + document.getElementById("select-state").value);

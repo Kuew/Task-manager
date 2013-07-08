@@ -31,7 +31,7 @@ define([], function(jio, jio_state, jio_project){
         //console.log(start);
         //console.log(end);
         if(start > end){
-          alert("Dates not allowing any time for this task");
+          alert("Uncorresponding dates");
           return false;
         }
       }
@@ -91,7 +91,9 @@ define([], function(jio, jio_state, jio_project){
         str += "<input name='enddate' id='enddate' type='text' data-role='datebox' data-options='{\"mode\":\"calbox\", \"useNewStyle\":true}' data-mini='true' data-theme='c'/>";
                      //str += "</div>";
         str += projectstr + statestr ;
-        str += "<label for='description'>Description:</label><textarea name='description' id='description' data-mini='true' data-theme='c'></textarea></form>";
+        str += "<div data-role='fieldcontain' data-mini='true'><label for='description'>Description:</label><textarea name='description' id='description' data-mini='true' data-theme='c'></textarea></div>";
+        str += "<br/><div data-role='controlgroup' data-type='horizontal' ><a href='index.html' data-mini='true' data-theme='a' class='deletetaskbutton' data-icon='delete' data-role='button' data-rel='back'>Delete</a>";
+        str += "<a href='index.html' data-theme='a' class='savebutton' data-mini='true' data-icon='check' data-role='button' data-rel='back'>Save</a></div></form>";
         $(".fieldcontain1").empty().append( str).trigger("create");
        // console.log(str);
        // console.log($("input[name='begindate']").val());
@@ -114,21 +116,22 @@ define([], function(jio, jio_state, jio_project){
       }
           },
           function (err, response) {
-      var i;
-      var str = "";
-      console.log(response[0]._id);
-      str = "<form id='editfoo'><div data-role='fieldcontain' data-mini='true'><label for='title'>Title:</label><input type='text' id='title' name='title'  value='" + response[0].title + "' data-mini='true' data-theme='c' /></div>";
-      str += "<input type='hidden' id='id' name='id'  value='" + response[0]._id + "'/>"; //passing id as hidden input just fro manipulations
-      str += "<label for='begindate' class='datelabel'>Begin date:</label>";
-      str += "<input name='begindate' id='begindate' type='text' data-role='datebox' data-options='{\"mode\":\"calbox\", \"useNewStyle\":true}' data-mini='true'  value='" + response[0].begindate + "' data-theme='c' />";
+            var i, str = "";
+            console.log(response[0]._id);
+            str = "<form id='editfoo'><div data-role='fieldcontain' data-mini='true'><label for='title'>Title:</label><input type='text' id='title' name='title'  value='" + response[0].title + "' data-mini='true' data-theme='c' /></div>";
+            str += "<input type='hidden' id='id' name='id'  value='" + response[0]._id + "'/>"; //passing id as hidden input just fro manipulations
+            str += "<label for='begindate' class='datelabel'>Begin date:</label>";
+            str += "<input name='begindate' id='begindate' type='text' data-role='datebox' data-options='{\"mode\":\"calbox\", \"useNewStyle\":true}' data-mini='true'  value='" + response[0].begindate + "' data-theme='c' />";
 
-      str += "<label for='enddate' class='datelabel'>Begin date:</label>";
-      str += "<input name='enddate' id='enddate' type='text' data-role='datebox' data-options='{\"mode\":\"calbox\", \"useNewStyle\":true}' data-mini='true'  value='" + response[0].enddate + "' data-theme='c' />";
-      str += "<div data-role='fieldcontain' data-mini='true'><label for='state'>State:</label><input type='text' id='state' name='state'  value='" + response[0].state + "'  disabled='true' data-mini='true' data-theme='c' /></div>";
+            str += "<label for='enddate' class='datelabel'>Begin date:</label>";
+            str += "<input name='enddate' id='enddate' type='text' data-role='datebox' data-options='{\"mode\":\"calbox\", \"useNewStyle\":true}' data-mini='true'  value='" + response[0].enddate + "' data-theme='c' />";
+            str += "<div data-role='fieldcontain' data-mini='true'><label for='state'>State:</label><input type='text' id='state' name='state'  value='" + response[0].state + "'  disabled='true' data-mini='true' data-theme='c' /></div>";
             str += "<div data-role='fieldcontain' data-mini='true'><label for='project'>Project:</label><input type='text' id='project' name='project'  value='" + response[0].project + "'  disabled='true' data-mini='true' data-theme='c' /></div>";
-      //  str += projectstr + statestr ;
-      str += "<div data-role='fieldcontain' data-mini='true'><label for='description'>Description:</label><textarea name='textarea' id='description' data-mini='true' >" + response[0].description + "</textarea><\div></form>";
-      $(".fieldcontain1").empty().append( str).trigger("create");
+            //  str += projectstr + statestr ;
+            str += "<div data-role='fieldcontain' data-mini='true'><label for='description'>Description:</label><textarea name='textarea' id='description' data-mini='true' >" + response[0].description + "</textarea><\div>";
+            str += "<br/><div data-role='controlgroup' data-type='horizontal' ><a href='index.html' data-mini='true' data-theme='a' data-rel='back' class='deletetaskbutton' data-icon='delete' data-role='button'>Delete</a>";
+            str += "<a href='index.html' data-theme='a' class='savebutton' data-mini='true' data-icon='check' data-role='button' data-rel='back'>Save</a></div></form>";
+            $(".fieldcontain1").empty().append( str).trigger("create");
           }
         );
       }
@@ -138,60 +141,66 @@ define([], function(jio, jio_state, jio_project){
 
   //on reenrégistre le formulaire dans jIO apres modification éventuel de certains champs
   $(document).on( "click",".savebutton", function(e, data){
+  if ($(this).attr("data-bound") === undefined) {
+      e.preventDefault(); //pour bloquer le rechargement de la page
+      if(!validator()) return false; // stop the script(return false) il a given field is not wel filled
+      var   object = {} ;
+      object["_id"] = document.getElementById("id").value;
+      object["title"] = document.getElementById("title").value;
+      object["project"] = document.getElementById("project").value;
+      object["state"] = document.getElementById("state").value;
+      object["description"] = document.getElementById("description").value;
+      object["begindate"] = document.getElementById("begindate").value;
+      object["enddate"] = document.getElementById("enddate").value;
+      
+      if(document.getElementById("id").value === "auto"){ //nouvelle tache on crée identifiant par incrémentation
+      jio.allDocs(
+          { "query":{
+              "query": "_id: = %",
+              "filter": {
+                  "limit":[0,10],
+                  "sort_on":[["_id","descending"]],
+                  "select_list":["_id"]
+              },
+              "wildcard_character":'%'
+            }
+          },
+          function (err, response) {
 
-    e.preventDefault(); //pour bloquer le rechargement de la page
-    if(!validator()) return false; // stop the script(return false) il a given field is not wel filled
-    var   object = {} ;
-    object["_id"] = document.getElementById("id").value;
-    object["title"] = document.getElementById("title").value;
-    object["project"] = document.getElementById("project").value;
-    object["state"] = document.getElementById("state").value;
-    object["description"] = document.getElementById("description").value;
-    object["begindate"] = document.getElementById("begindate").value;
-    object["enddate"] = document.getElementById("enddate").value;
-    
-    if(document.getElementById("id").value === "auto"){ //nouvelle tache on crée identifiant par incrémentation
-    jio.allDocs(
-        { "query":{
-            "query": "_id: = %",
-            "filter": {
-                "limit":[0,10],
-                "sort_on":[["_id","descending"]],
-                "select_list":["_id"]
-            },
-            "wildcard_character":'%'
+            var num =  parseInt(response[0]._id.split('-')[1]) +1 ;
+            object["_id"] = "T-" + num;
+            jio.put(object, function(err, response){
+              //console.log(object);
+            });
           }
-        },
-        function (err, response) {
-
-          var num =  parseInt(response[0]._id.split('-')[1]) +1 ;
-          object["_id"] = "T-" + num;
-          jio.put(object, function(err, response){
-            //console.log(object);
-          });
-        }
-      );
-    }else{ // On édite une tache, l'identifiant est dans un champ caché du formulaire
-          jio.put(object, function(err, response){
-           // console.log(response);
-          });
-    } 
-      document.getElementById("title").value = "";
-      document.getElementById("project").value = "";
-      document.getElementById("state").value = "";
-      document.getElementById("description").value = "";
-      document.getElementById("begindate").value = "";
-      document.getElementById("enddate").value = "";
+        );
+      }else{ // On édite une tache, l'identifiant est dans un champ caché du formulaire
+            jio.put(object, function(err, response){
+             // console.log(response);
+            });
+      } 
+        document.getElementById("title").value = "";
+        document.getElementById("project").value = "";
+        document.getElementById("state").value = "";
+        document.getElementById("description").value = "";
+        document.getElementById("begindate").value = "";
+        document.getElementById("enddate").value = "";
+        $(this).attr("data-bound", "true");
+     }   
     });
 
   
-   //on reenrégistre le formulaire dans jIO apres modification éventuel de certains champs
+  //on reenrégistre le formulaire dans jIO apres modification éventuel de certains champs
   $(document).on( "click",".deletetaskbutton", function(e, data){ // a revoir
     if ($(this).attr("data-bound") === undefined) {
         if(!validator()) return false;
-        var r = confirm("Are you sure to delete the task " + document.getElementById("title").value + "?");
-        if(r == true) jio.remove({"_id": document.getElementById("id").value}, function (err, response) {});
-        return null; 
+        var r = confirm("Sure to delete the task " + document.getElementById("title").value + "?");
+        if(r == true) {
+					jio.remove({"_id": document.getElementById("id").value}, function (err, response) {});
+				}
+				else{
+					return false;
+				}
     }
     $(this).attr("data-bound", "true");
   });
