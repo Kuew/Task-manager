@@ -1,38 +1,40 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-      <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>PMAPI_Home</title>
-      <link rel="stylesheet" href="js/plugins/jquerymobile/jquery.mobile-1.3.1.css" type="text/css" />
-      <link rel="stylesheet" href="js/plugins/datebox/jqm-datebox.min.css" type="text/css"/>
-      <link rel="stylesheet" href="js/plugins/datebox/jquery.mobile.simpledialog.min.css" type="text/css" />
-      <link rel="stylesheet" href="js/plugins/datebox/datebox.css" type="text/css" media="screen"/>
-      <link rel="stylesheet" href="pmapi.css" type="text/css" media="screen"/>
-      
-      <script data-main="js/main" src="js/require.js"></script>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PMAPI_Home</title>
+    <link rel="stylesheet" href="js/plugins/jquerymobile/jquery.mobile-1.3.1.css" type="text/css"/>
+    <link rel="stylesheet" href="js/plugins/datebox/jqm-datebox.min.css" type="text/css"/>
+    <link rel="stylesheet" href="js/plugins/datebox/jquery.mobile.simpledialog.min.css" type="text/css"/>
+    <link rel="stylesheet" href="js/plugins/datebox/datebox.css" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="pmapi.css" type="text/css" media="screen"/>
+    <script data-main="js/main" src="js/require.js"></script>
   </head>
   <body>
     <div data-role="page" id="index" data-theme="c">
-    <div data-role="header" data-mini="true" data-inline="true">
-      <a data-role="button" data-iconpos="notext" data-position-to='window' class='sortbutton' data-rel='popup' href='#sortpopup' data-icon='gear'>Sort by</a>
-      <H1>Project managment</H1>
-      <a href="details.html" class="newtaskbutton" data-icon="gear" data-position-to='window' >New task</a>
-    </div>
-    <div data-role="content" data-theme='a'>
-	<ol data-theme='d' data-role="listview" class="content-listview" data-filter="true" data-inset="true" data-filter-placeholder="filter task, state, date, project" ></ol>
-	<div data-role="popup" id="mypopup" data-shadow="false"  data-theme='a' data-mini='true' ></div>
-	<div data-role="popup" id="sortpopup" data-shadow="false" data-theme='a'></div>
-	<div data-role="popup" id="newtaskpopup" data-shadow="false" ></div>
-    </div><!-- /content -->
-    <div data-role="footer" class="ui-bar" data-mini="true" data-position="fixed">
-      <div data-role="controlgroup" data-type="horizontal">
-	<a href="project.html" data-role="button" class="projectbutton" data-icon="arrow-u">Project</a>
-	<a href="index.html" class="tasklistbutton ui-btn-active" data-icon="arrow-u" >Task</a>
-	<a href="settings.html" data-role="button" class="settingsbutton" data-icon="gear">Settings</a>
+       <!-- header-->
+      <div data-role="header" data-mini="true" data-inline="true">
+        <a data-role="button" data-position-to='window' class='sortbutton' data-rel='popup' href='#sortpopup' data-icon='gear'>Sort by</a>
+        <H1>Task manager</H1>
+        <a href="details.html" class="newtaskbutton" data-icon="add" data-position-to='window' >New task</a>
+      </div>
+      <!-- content-->
+      <div data-role="content" data-theme='a'>
+	      <ol data-theme='d' data-role="listview" class="content-listview" data-filter="true" data-inset="true" data-filter-placeholder="filter task, state, date, project" ></ol>
+	      <div data-role="popup" id="mypopup" data-shadow="false"  data-theme='a' data-mini='true' ></div>
+	      <div data-role="popup" id="sortpopup" data-shadow="false" data-theme='a'></div>
+	      <div data-role="popup" id="newtaskpopup" data-shadow="false" ></div>
+      </div>
+      <!-- footer -->
+      <div data-role="footer" class="ui-bar" data-mini="true" data-position="fixed">
+        <div data-role="controlgroup" data-type="horizontal">
+	        <a href="project.html" data-role="button" class="projectbutton" data-icon="arrow-u">Project</a>
+	        <a href="index.html" class="tasklistbutton ui-btn-active" data-icon="arrow-u" >Task</a>
+	        <a href="settings.html" data-role="button" class="settingsbutton" data-icon="gear">Settings</a>
+        </div>
       </div>
     </div>
-    </div><!-- /page -->
   </body>
 </html>
 

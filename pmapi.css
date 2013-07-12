@@ -1,74 +1,75 @@
 ﻿@media (max-width: 480px) {
   #settingscontentdiv {
-    background:none repeat scroll 0 0;
-    border:2px solid gray;
+    background: none repeat scroll 0 0;
+    border: 2px solid gray;
     text-align:;
     width: 65%;
-    margin-top:4%;
-    margin-bottom:10%;
+    margin-top: 4%;
+    margin-bottom: 10%;
     margin-right:;
-    margin-left:15%;
+    margin-left: 15%;
   }
 
 /**************************************/
 /** RESPONSIBLE CSS FOR DETAILS PAGE **/
 
-#myResult {
-    background:none repeat scroll 0 0 ;
+  #myResult {
+    background: none repeat scroll 0 0;
     border: 2px solid gray;
-    text-align:center;
-     width: 70%;
-    margin-top:30px;
-    margin-bottom:15px;
+    text-align: center;
+    width: 70%;
+    margin-top: 30px;
+    margin-bottom: 15px;
     margin-left: 15%;
     padding: 0em;
   }
 
 
 /* for date box*/
-.date .ui-input-text {
-    display:block;
+  .date .ui-input-text {
+    display: block;
     width: 95% !important;
     border: 0 solid;
     padding: 1px;
-}
+  }
 
-.ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
+  .ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
     width: 90%;
-}
+  }
 
-.ui-field-contain, .ui-mobile fieldset.ui-field-contain {
+  .ui-field-contain, .ui-mobile fieldset.ui-field-contain {
     margin: 0.1em 0;
     padding: 0;
-}
-label.ui-select {
+  }
+
+  label.ui-select {
     font-size: 16px;
     font-weight: normal;
     line-height: 1.4;
     padding: 0em;
     margin: 0.6em 0.6em 0.6em 0.5em;
-}
+  }
 
-
-
-.fieldcontain1.ui-field-contain.ui-body.ui-br {
+  .fieldcontain1.ui-field-contain.ui-body.ui-br {
     border: ;
     padding: 0.2em;
     text-align: left;
     width: 99%;
-}
-#details .ui-field-contain label.ui-input-text {
+  }
+
+  #details .ui-field-contain label.ui-input-text {
     display: inline-block;
     margin: 0 1% 0 0;
     vertical-align: middle;
     width: 35%;
-}
-#details .ui-field-contain label.ui-select {
+  }
+
+  #details .ui-field-contain label.ui-select {
     display: inline-block;
     margin: 0 1% 0 0;
     vertical-align: middle;
     width: 35%;
-}
+  }
 /******************************/
 /**  END DETAILS RESPONSIBLE **/
 /******************************/
@@ -77,99 +78,101 @@ label.ui-select {
     width: 30%;
     padding: 5px;
   }
-  div.input{
-    background:none repeat scroll 0 0 gray;
+
+  div.input {
+    background: none repeat scroll 0 0 gray;
   }
-  div.texta{
-    background:none repeat scroll 0 0 purple;
+
+  div.texta {
+    background: none repeat scroll 0 0 purple;
   }
+
   i {
     color: gray;
     font-size: 0.75em;
   }
+
   .myspan {
     color: green;
     font-size: 0.75em;
   }
-  .titleSpan{
+
+  .titleSpan {
     font-size: 0.8em;
-  }
-
-
+  };
 }
 
 @media (min-width: 481px) and (max-width: 720px) {
 
-#settingscontentdiv {
-    background: none repeat scroll 0 0 ;
-    border:2px solid gray;
+  #settingscontentdiv {
+    background: none repeat scroll 0 0;
+    border: 2px solid gray;
     text-align:;
     width: 55%;
-    margin-top:5%;
-    margin-bottom:10%;
+    margin-top: 5%;
+    margin-bottom: 10%;
     margin-right:;
-    margin-left:20%;
+    margin-left: 20%;
   }
   /**************************************/
 /** RESPONSIBLE CSS FOR DETAILS PAGE **/
   #myResult {
-    background:none repeat scroll 0 0;
+    background: none repeat scroll 0 0;
     border: 2px solid gray;
-    text-align:center;
+    text-align: center;
     width: 45%;
-    margin-top:30px;
-    margin-bottom:15px;
+    margin-top: 30px;
+    margin-bottom: 15px;
     margin-right:;
-    margin-left:25%;
-
+    margin-left: 25%;
   }
 
 /* for date box*/
-.date .ui-input-text {
-    display:block;
+  .date .ui-input-text {
+    display: block;
     width: 95% !important;
     border: 0 solid;
     padding: 1px;
-}
+  }
 
-.ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
+  .ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
     width: 90%;
-}
+  }
 
-.ui-field-contain, .ui-mobile fieldset.ui-field-contain {
+  .ui-field-contain, .ui-mobile fieldset.ui-field-contain {
     border: 0px solid;
     margin: 0.1em 0;
     padding: 0;
-}
-label.ui-select {
+  }
+
+  label.ui-select {
     font-size: 16px;
     font-weight: normal;
     line-height: 1.4;
     padding: 0em;
     margin: 0.6em 0.6em 0.6em 0.5em;
-}
+  }
 
-
-
-.fieldcontain1.ui-field-contain.ui-body.ui-br {
+  .fieldcontain1.ui-field-contain.ui-body.ui-br {
     border: 1px solid gray;
     padding: 0.8em;
     text-align: left;
     width: 95%;
-}
+  }
 
-#details .ui-field-contain label.ui-input-text {
+  #details .ui-field-contain label.ui-input-text {
     display: inline-block;
     margin: 0 1% 0 0;
     vertical-align: middle;
     width: 30%;
-}
-#details .ui-field-contain label.ui-select {
+  }
+
+  #details .ui-field-contain label.ui-select {
     display: inline-block;
     margin: 0 1% 0 0;
     vertical-align: middle;
     width: 20%;
-}
+  }
 /******************************/
 /**  END DETAILS RESPONSIBLE **/
 /******************************/
@@ -178,103 +181,124 @@ label.ui-select {
     width: 30%;
     padding: 5px;
   }
-  div.input{
-    background:none repeat scroll 0 0 gray;
+
+  div.input {
+    background: none repeat scroll 0 0 gray;
   }
-  div.texta{
-    background:none repeat scroll 0 0 purple;
+
+  div.texta {
+    background: none repeat scroll 0 0 purple;
   }
+
   i {
     color: brown;
     font-size: 0.8em;
   }
+
   .myspan {
     color: green;
-     font-size: 0.8em;
-  }
-  .titleSpan{
-    font-size: 0.85em;
+    font-size: 0.8em;
   }
 
+  .titleSpan {
+    font-size: 0.85em;
+  };
 }
+
 @media (min-width: 721px) {
 
- #settingscontentdiv {
-    background: none repeat scroll 0 0 ;
-    border:2px solid gray;
+  #settingscontentdiv {
+    background: none repeat scroll 0 0;
+    border: 2px solid gray;
     text-align:;
-    width: 50%;
-    margin-top:2%;
-    margin-bottom:10%;
+    width: 35%;
+    margin-top: 2%;
+    margin-bottom: 10%;
     margin-right:;
-    margin-left:30%;
+    margin-left: 30%;
   }
 
 /**************************************/
 /** RESPONSIBLE CSS FOR DETAILS PAGE **/
   #myResult {
-    background:none repeat scroll 0 0 ;
+    background: none repeat scroll 0 0;
     border: 2px solid gray;
-    text-align:center;
-    width: 37%;
-    margin-top:30px;
-    margin-bottom:15px;
+    text-align: center;
+    width: 35%;
+    margin-top: 30px;
+    margin-bottom: 15px;
     margin-right:;
-    margin-left:30%;
+    margin-left: 30%;
   }
 /* for date box*/
-.date .ui-input-text {
-    display:block;
-    width: 95% !important;
+  .date .ui-input-text {
+    display: block;
+    width: 100% !important;
     border: 0 solid;
     padding: 1px;
-}
+  }
 
-.ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
+/*cdisplay controlgroup button center in detail page*/
+  .cg {
+    text-align: center;
+  }
+
+  .cg .ui-controlgroup-controls {
+    display: inline-block;
+    width: auto;
+  }
+
+  .ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
     width: 90%;
-}
+  }
 
-.ui-field-contain, .ui-mobile fieldset.ui-field-contain {
-    border: 0px solid;
+  .ui-field-contain, .ui-mobile fieldset.ui-field-contain {
+    border: 2px solid;
     margin: 0.1em 0;
     padding: 0;
-}
-label.ui-select {
+  }
+
+  label.ui-select {
     font-size: 16px;
     font-weight: normal;
     line-height: 1.4;
     padding: 0em;
     margin: 0.6em 0.6em 0.6em 0.5em;
-}
+  }
 
-.fieldcontain1.ui-field-contain.ui-body.ui-br {
+  .fieldcontain1.ui-field-contain.ui-body.ui-br {
     border: 1px solid gray;
-    padding: 0.8em;
+    padding: 0.1em;
     text-align: left;
-    width: 95%;
-}
+    width: 100%;
+  }
 
 /******************************/
 /**  END DETAILS RESPONSIBLE **/
 /******************************/
 
-  div.input{
-    background:none repeat scroll 0 0 gray;
+  div.input {
+    background: none repeat scroll 0 0 gray;
   }
-  div.texta{
-    background:none repeat scroll 0 0 purple;
+
+  div.texta {
+    background: none repeat scroll 0 0 purple;
   }
+
   i {
     color: brown;
     font-size: 0.85em;
   }
+
   .myspan {
-    color: green;/*brown*/
+    color: green;
+/*brown*/
     font-size: 0.85em;
   }
- .titleSpan{
+
+  .titleSpan {
     font-size: 1em;
-  }
+  };
 }
 /** end media query**/
 /********************/
@@ -285,10 +309,11 @@ label.ui-select {
 /************************/
 /** CSS FOR EVERY PAGE**/
 
-.ui-btn-active{
+.ui-btn-active {
   background: transparent;
 }
-.li-active{
+
+.li-active {
   background: silver;
 }
 
@@ -298,24 +323,25 @@ label.ui-select {
 
 
 
-/***********************************/
-/****** begin  settings.html *******/
+/**************************/
+/** begin  settings.html **/
+#projectsset {
+  background: ;
+  border: 0.05em solid gray;
+}
 
-#projectsset{
+#statesset {
   background: ;
   border: 0.05em solid gray;
 }
-#statesset{
-  background: ;
-  border: 0.05em solid gray;
-}
-.controlsclass{
+
+.controlsclass {
   text-align: right;
   padding: 0.8em;
-  margin:0.2em;
+  margin: 0.2em;
 }
-/*** end settings.html ***/
-/*************************/
+/** end settings.html **/
+/***********************/
 
 
 
@@ -325,36 +351,35 @@ label.ui-select {
 
 /* for date box*/
 .date .ui-input-text {
-    display:block;
-    width: 95% !important;
-    border: 0 solid;
-    padding: 1px;
+  display: block;
+  width: 95% !important;
+  border: 0 solid;
+  padding: 1px;
 }
 
 .ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
-    width: 90%;
+  width: 90%;
 }
 
 .ui-field-contain, .ui-mobile fieldset.ui-field-contain {
-    border: 0px solid;
-    margin: 0.1em 0;
-    padding: 0;
+  border: 0px solid;
+  margin: 0.1em 0;
+  padding: 0;
 }
+
 label.ui-select {
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 1.4;
-    padding: 0em;
-    margin: 0.6em 0.6em 0.6em 0.5em;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.4;
+  padding: 0em;
+  margin: 0.6em 0.6em 0.6em 0.5em;
 }
-
-
 
 .fieldcontain1.ui-field-contain.ui-body.ui-br {
-    border: 0px solid gray;
-    padding: 0.8em;
-    text-align: left;
-    width: 95%;
+  border: 0px solid gray;
+  padding: 0.1em;
+  text-align: left;
+  width: 95%;
 }
 
 
@@ -364,80 +389,55 @@ label.ui-select {
 
 
 #mypopup .ui-controlgroup, fieldset.ui-controlgroup {
-    margin: 0.5em;
-    padding: 0.5em;
+  margin: 0.5em;
+  padding: 0.5em;
 }
 
 .popupstatelabel label.ui-select {
-    border: 1px solid;
-    display: block;
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 1.4;
-    margin: 0.5em 0.5em 0.9em 0.3em;
-    padding: 0.2em;
+  border: 1px solid;
+  display: block;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.4;
+  margin: 0.5em 0.5em 0.9em 0.3em;
+  padding: 0.2em;
 }
-
-
 
 .ui-field-contain .ui-select {
-    display: inline-block;
-    width: 40%;
+  display: inline-block;
+  width: 40%;
 }
-
 
 #sortpopup {
-    padding: 0.3em;
+  padding: 0.3em;
 }
 
-/**************** details --> validate ******************/
-/*
-input[type='text'], textarea, select {
-    border: solid 1px #999;
-}
-input[type='text'].focus, textarea.focus, select.focus {
-    border-color: green !important;
-}
-input[type='text'].invalid, textarea.invalid, select.invalid {
-    border-color: red;
-}
-input[type='text'].inactive, textarea.inactive, select.inactive, option.inactive {
-    color: #999;
-    font-style: italic;
-}
-input[type='text'].required, textarea.required {
-   /* background:  url(required-input.png) right 5px no-repeat;*/
-/*  border-color: brown !important;
-}*/
-/************************************/
 .required {
   border: 1px solid red !important;
   background:;
 }
 
 #newfoo label.error {
-color:red;
+  color: red;
 }
+
 #newfoo input.error {
-border:1px solid red;
+  border: 1px solid red;
 }
 
 #editfoo label.error {
-color:red;
+  color: red;
 }
+
 #editfoo input.error {
-border:1px solid red;
+  border: 1px solid red;
 }
+
 .ui-disabled {
-	border: 1px solid;
-	z-index: 1;
+  border: 1px solid;
+  z-index: 1;
 }
+
 .ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
-	width: 7.5em;
+  width: 7.5em;
 }
-/*
-.datelabel{
-	display: inline-block;
-	width: 8em!important;
-}
-*/

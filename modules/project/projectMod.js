@@ -4,7 +4,8 @@ define([], function (jio, jio_state, jio_project) {
   // global variables
   var that = {};
   that.init = function (jio, jio_state) {
-    // $(document).on("pagebeforeshow","#projects", function (e, data) {
+
+    // button states footer menu
     if ($('.settingsbutton').hasClass('ui-btn-active')) {
       $('.settingsbutton').removeClass('ui-btn-active');
     }
@@ -12,6 +13,7 @@ define([], function (jio, jio_state, jio_project) {
       $('.tasklistbutton').removeClass('ui-btn-active');
     }
     $('.projectbutton').addClass('ui-btn-active');
+    // initial display of projects
     jio.allDocs(
       { "query": {
         "query": "_id: = %",
@@ -39,32 +41,30 @@ define([], function (jio, jio_state, jio_project) {
             projects.push(task.project); // find if element is in array
           }
         }
-        str = "<div data-role='collapsible-set' class='projectgroup' ";
-        str += "data-inset='true'>";
+        str = "<div data-role='collapsible-set' class='projectgroup' " +
+          "data-inset='true'>";
         for (j = 0; j < projects.length; j++) {
-          str1 = "<div data-role='collapsible' data-theme='c' class='myol' ";
-          str1 += "data-content-theme='d' class='myol' data-inset='true'><h2>";
-          str1 += projects[j] + "</h2><ol data-role='listview' ";
-          str1 += " data-inset='true'>";
+          str1 = "<div data-role='collapsible' data-theme='c' class='myol' " +
+            "data-content-theme='d' class='myol' data-inset='true'><h2>" +
+            projects[j] + "</h2><ol data-role='listview' data-inset='true'>";
           for (k = 0; k < reps.length; k++) {
             if (reps[k].project === projects[j]) {
-              str1 += "<li data-id='" + reps[k]._id + "' ><a class='myLink' ";
-              str1 += "data-transition='slide' id='" + reps[k]._id + "' ";
-              str1 += "href='details.html?_id=" + reps[k]._id + "'>";
-              str1 += "<span class='titleSpan'>" + reps[k].title;
-              str1 += "</span><br/><i>from " + reps[k].begindate + "&nbsp;to ";
-              str1 += reps[k].enddate + "</i><br/><span class='myspan'>";
-              str1 += reps[k].state + "</span></a></li>";
+              str1 += "<li data-id='" + reps[k]._id + "'><a class='myLink'" +
+                "data-transition='slide' id='" + reps[k]._id + "' " +
+                "href='details.html?_id=" + reps[k]._id + "'>" +
+                "<span class='titleSpan'>" + reps[k].title +
+                "</span><br/><i>from " + reps[k].begindate + "&nbsp;to " +
+                reps[k].enddate + "</i><br/><span class='myspan'>" +
+                reps[k].state + "</span></a></li>";
             }
           }
-          str1 += " </ol></div>";
+          str1 += "</ol></div>";
           str += str1;
         }
         str += "</div>";
-        // console.log(str);
         $("#pagecontent").empty().append(str).trigger("create");
       }
     );
-  }
+  };
   return that;
 });

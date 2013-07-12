@@ -17,8 +17,9 @@ In this project we are using the following web technologies:
 ###How to run?###
 ---------------------------------------------------------------
  Just click on the above *Download zip* button or just click [download sources](https://github.com/marcellintabou/Task-manager/archive/master.zip) 
- and unzip the folder in you localhost and run in your browser. To have a mobilen efect, you can resize your browser sceen from bigger to smaller
- resolution and see how the application is displayed.
+ and unzip the folder in you localhost and run in your browser. To have a mobile effect, you can resize your browser sceen from bigger to smaller
+ resolution and see how the application is displayed. If y are using firefox newer version,just select Tool > Web developper > Responsible design view.
+ Shortcot: Ctrl + ALT + M -:)
 Many functionalities are still to come. This is just the learning behaview. 
 
 ###Browsers supported:###
