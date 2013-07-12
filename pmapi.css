@@ -1,27 +1,21 @@
 ﻿@media (max-width: 480px) {
   #settingscontentdiv {
-    background: none repeat scroll 0 0;
-    border: 2px solid gray;
+   /* background: none repeat scroll 0 0;*/
+    border: 1px solid gray;
     text-align:;
-    width: 65%;
-    margin-top: 4%;
-    margin-bottom: 10%;
-    margin-right:;
-    margin-left: 15%;
+    width: 75%;
+    margin: auto;
   }
 
 /**************************************/
 /** RESPONSIBLE CSS FOR DETAILS PAGE **/
 
   #myResult {
-    background: none repeat scroll 0 0;
-    border: 2px solid gray;
+    /*background: none repeat scroll 0 0;*/
+    border: 1px solid gray;
     text-align: center;
     width: 70%;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    margin-left: 15%;
-    padding: 0em;
+    margin :auto;
   }
 
 
@@ -38,14 +32,14 @@
   }
 
   .ui-field-contain, .ui-mobile fieldset.ui-field-contain {
-    margin: 0.1em 0;
+    /*margin: 0.1em 0;*/
     padding: 0;
   }
 
   label.ui-select {
     font-size: 16px;
     font-weight: normal;
-    line-height: 1.4;
+    /*line-height: 1.4;*/
     padding: 0em;
     margin: 0.6em 0.6em 0.6em 0.5em;
   }
@@ -66,7 +60,6 @@
 
   #details .ui-field-contain label.ui-select {
     display: inline-block;
-    margin: 0 1% 0 0;
     vertical-align: middle;
     width: 35%;
   }
@@ -105,26 +98,20 @@
 @media (min-width: 481px) and (max-width: 720px) {
 
   #settingscontentdiv {
-    background: none repeat scroll 0 0;
-    border: 2px solid gray;
+   /* background: none repeat scroll 0 0;*/
+    border: 1px solid gray;
     text-align:;
     width: 55%;
-    margin-top: 5%;
-    margin-bottom: 10%;
-    margin-right:;
-    margin-left: 20%;
+    margin: auto;
   }
   /**************************************/
 /** RESPONSIBLE CSS FOR DETAILS PAGE **/
   #myResult {
-    background: none repeat scroll 0 0;
+  /*  background: none repeat scroll 0 0;*/
     border: 2px solid gray;
     text-align: center;
     width: 45%;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    margin-right:;
-    margin-left: 25%;
+    margin: auto;
   }
 
 /* for date box*/
@@ -140,9 +127,7 @@
   }
 
   .ui-field-contain, .ui-mobile fieldset.ui-field-contain {
-    border: 0px solid;
-    margin: 0.1em 0;
-    padding: 0;
+    margin: auto;
   }
 
   label.ui-select {
@@ -150,7 +135,7 @@
     font-weight: normal;
     line-height: 1.4;
     padding: 0em;
-    margin: 0.6em 0.6em 0.6em 0.5em;
+    margin:auto;
   }
 
   .fieldcontain1.ui-field-contain.ui-body.ui-br {
@@ -208,27 +193,21 @@
 @media (min-width: 721px) {
 
   #settingscontentdiv {
-    background: none repeat scroll 0 0;
-    border: 2px solid gray;
+   /* background: none repeat scroll 0 0;*/
+    border:1px solid gray;
     text-align:;
     width: 35%;
-    margin-top: 2%;
-    margin-bottom: 10%;
-    margin-right:;
-    margin-left: 30%;
+    margin: auto;
   }
 
 /**************************************/
 /** RESPONSIBLE CSS FOR DETAILS PAGE **/
   #myResult {
-    background: none repeat scroll 0 0;
-    border: 2px solid gray;
+   /* background: none repeat scroll 0 0;*/
+    border: 1px solid gray;
     text-align: center;
     width: 35%;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    margin-right:;
-    margin-left: 30%;
+    margin: auto;
   }
 /* for date box*/
   .date .ui-input-text {
@@ -263,7 +242,7 @@
     font-weight: normal;
     line-height: 1.4;
     padding: 0em;
-    margin: 0.6em 0.6em 0.6em 0.5em;
+    margin: auto;
   }
 
   .fieldcontain1.ui-field-contain.ui-body.ui-br {
@@ -325,6 +304,10 @@
 
 /**************************/
 /** begin  settings.html **/
+#settingscontentdiv {
+   margin-top: 5%;
+   margin-bottom: 5%;
+}
 #projectsset {
   background: ;
   border: 0.05em solid gray;
@@ -364,7 +347,6 @@
 .ui-field-contain, .ui-mobile fieldset.ui-field-contain {
   border: 0px solid;
   margin: 0.1em 0;
-  padding: 0;
 }
 
 label.ui-select {
@@ -372,7 +354,7 @@ label.ui-select {
   font-weight: normal;
   line-height: 1.4;
   padding: 0em;
-  margin: 0.6em 0.6em 0.6em 0.5em;
+  margin: auto;
 }
 
 .fieldcontain1.ui-field-contain.ui-body.ui-br {
@@ -382,7 +364,10 @@ label.ui-select {
   width: 95%;
 }
 
-
+#myResult {
+    margin-top:5%;
+    margin-bottom:5%;
+  }
 /**  END DETAILS **/
 /***********/
 
@@ -439,5 +424,5 @@ label.ui-select {
 }
 
 .ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
-  width: 7.5em;
+  width: 8em;
 }

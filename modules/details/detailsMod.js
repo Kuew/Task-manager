@@ -150,7 +150,7 @@ define([], function (jio, jio_state, jio_project) {
                     "'{\"mode\":\"calbox\", \"useNewStyle\":true}' " +
                     " data-mini='true' value='" + response[0].begindate +
                     "' type='text' data-theme='c'/>" +
-                    "<label for='enddate' class='datelabel'>Begin date" +
+                    "<label for='enddate' class='datelabel'>Begin date:" +
                     "</label><input name='enddate' id='enddate'" +
                     " data-role='datebox' placeholder='Required' " +
                     "data-options=" +
@@ -202,7 +202,9 @@ define([], function (jio, jio_state, jio_project) {
       object.description = document.getElementById("description").value;
       object.begindate = document.getElementById("begindate").value;
       object.enddate = document.getElementById("enddate").value;
-
+     //object.enddate = $("#enddate").val();
+      //console.log($("#enddate").val());
+      //console.log(document.getElementById("enddate").value);
       if (document.getElementById("id").value === "auto") { //new task
         //create auto increment ID for the new task
         jio.allDocs({
@@ -221,7 +223,11 @@ define([], function (jio, jio_state, jio_project) {
           function (err, response) {
             var num = parseInt(response[0]._id.split('-')[1], 10) + 1;
             object._id = "T-" + num;
-            jio.put(object);
+            console.log(object);
+            jio.put(object, function(error, resp){
+              console.log(resp);
+              console.log(error);
+            });
             document.getElementById("title").value = "";
             document.getElementById("project").value = "";
             document.getElementById("state").value = "";
