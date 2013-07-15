@@ -2,7 +2,7 @@
   #settingscontentdiv {
    /* background: none repeat scroll 0 0;*/
     border: 1px solid gray;
-    text-align:;
+    font-size: 0.5em !important;
     width: 75%;
     margin: auto;
   }
@@ -307,6 +307,7 @@
 #settingscontentdiv {
    margin-top: 5%;
    margin-bottom: 5%;
+   border-radius: 3%;
 }
 #projectsset {
   background: ;
@@ -367,6 +368,7 @@ label.ui-select {
 #myResult {
     margin-top:5%;
     margin-bottom:5%;
+    border-radius: 3% 3% 3% 3%;
   }
 /**  END DETAILS **/
 /***********/

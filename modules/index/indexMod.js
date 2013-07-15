@@ -43,6 +43,8 @@ define([], function (jio, jio_state) {
             "class='popupbutton' data-rel='popup' " +
             "href='#mypopup' data-icon='gear'></a></li>";
         }
+        //console.log("index initialized very well");
+        //console.log(err);
         $(".content-listview").empty().append(str).listview("refresh");
       }
     );
@@ -187,6 +189,7 @@ define([], function (jio, jio_state) {
     // ===================== document bindings ===========================
     //display the sort criterias panel
     $(document).on("click", ".sortbutton", function (e) {
+      console.log("Sort button cliqued.........");
       $('taskbutton').addClass('ui-btn-active');
       var str = "";
       str += "<form id='sortform'><fieldset data-role='controlgroup' >" +

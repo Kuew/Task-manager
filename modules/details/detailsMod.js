@@ -2,12 +2,16 @@ define([], function (jio, jio_state, jio_project) {
 
   "use strict";
   // global variables
-  var that = {}, start, end;
+  var that = {}, start, end, start1, end1;
 
   //function for form validation
   that.validator = function () {
-    start = new Date(document.getElementById("begindate").value);
-    end = new Date(document.getElementById("enddate").value);
+    //date in format "mm/dd/yyyy"
+    start =  document.getElementById("begindate").value.split('/');
+    end =  document.getElementById("enddate").value.split('/');
+    //date in format "dd/mm/yyyy"
+    start1 = new Date(start[1] + "/" + start[0] + "/" + start[2]);
+    end1 = new Date(end[1] + "/" + end[0] + "/" + end[2]);
     //console.log(document.getElementById("title").value);
     if (document.getElementById("title").value === "") {
       alert("Title is required");
@@ -22,7 +26,7 @@ define([], function (jio, jio_state, jio_project) {
       alert("End date is required");
       return false;
     }
-    if (start > end) {
+    if (start1 > end1) {
       alert("Uncorresponding dates");
       return false;
     }
@@ -244,6 +248,9 @@ define([], function (jio, jio_state, jio_project) {
         document.getElementById("description").value = "";
         document.getElementById("begindate").value = "";
         document.getElementById("enddate").value = "";
+        //$(this).addClass('ui-disabled');
+        $(".savebutton").addClass('ui-disabled');
+        $(".deletetaskbutton").addClass('ui-disabled');
       }
     });
 

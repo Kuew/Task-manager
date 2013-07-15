@@ -3,7 +3,6 @@ define([], function () {
   "use strict";
   var that = {}, App = {};
   that.start = function () {
-
     jQuery.extend(jQuery.mobile.datebox.prototype.options, {
       'overrideDateFormat': '%d/%m/%Y',
       'overrideHeaderFormat': '%d/%m/%Y'
@@ -23,7 +22,7 @@ define([], function () {
         "username": "Marco",
         "application_name": "Marco_PMAPI_project"
       });
-    $("#index").on("pagecreate", function () {
+    //$("#index").on("pagecreate", function () {
       localStorage.clear();
       jio_state.post({
         "_id": "ST-1",
@@ -59,7 +58,7 @@ define([], function () {
         "_id": "T-5444",
         "title": "Jquery mobile learning",
         "project": "Daily activity",
-        "begindate": "20/5/2013",
+        "begindate": "20/05/2013",
         "enddate": "16/11/2013",
         "state": "following",
         "description": "some description ..."
@@ -87,13 +86,14 @@ define([], function () {
         "title": "Going to shopping",
         "project": "Weekend activity",
         "begindate": "11/07/2013",
-        "enddate": "13/07/2013",
+        "enddate": "13/08/2013",
         "state": "complete",
         "description": "task on jQuery"
       });
-    });
+   // });
 
     $(document).on("pagebeforeshow", "#index", function () {
+      //$(document).off(".index_setup");
       require(["indexMod"], function (indexmod) {
         indexmod.init(jio, jio_state);
       });
@@ -109,35 +109,39 @@ define([], function () {
       $(document).off(".details_setup");
       require(["detailsMod"], function (details) {
         details.init(jio, jio_state, jio_project);
-        window.App.populateDetails = details.populateDetails;
+        //window.App.populateDetails = details.populateDetails;
+        App.populateDetails = details.populateDetails;
       });
     });
 
     $(document).on("pageshow", "#details", function () {
       setTimeout(function () {
         // Do something after 5 milli seconds
-        window.App.populateDetails(jio, jio_state, jio_project);
-      }, 50);
+        //window.App.populateDetails(jio, jio_state, jio_project);
+        App.populateDetails(jio, jio_state, jio_project);
+      }, 70);
     });
 
     $(document).on("pagecreate.settings_setup", "#settings", function () {
       $(document).off(".settings_setup");
       require(["settingsMod"], function (settings) {
         settings.init(jio, jio_state, jio_project);
-        window.App.populateSettings = settings.populateSettings;
+        //window.App.populateSettings = settings.populateSettings;
+        App.populateSettings = settings.populateSettings;
       });
     });
 
     $(document).on("pageshow", "#settings", function () {
       setTimeout(function () {
         // Do something after 5 milli seconds
-        window.App.populateSettings(jio, jio_state, jio_project);
+        //window.App.populateSettings(jio, jio_state, jio_project);
+        App.populateSettings(jio, jio_state, jio_project);
       }, 50);
     });
 
     $.mobile.initializePage();
   }
 
-  window.App = App;
+  //window.App = App;
   return that;
 });
