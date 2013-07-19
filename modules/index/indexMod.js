@@ -44,7 +44,7 @@ define([], function (jio, jio_state) {
             "href='#mypopup' data-icon='gear'></a></li>";
         }
         //console.log("index initialized very well");
-        //console.log(err);
+        console.log(err);
         $(".content-listview").empty().append(str).listview("refresh");
       }
     );

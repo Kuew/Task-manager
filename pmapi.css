@@ -1,4 +1,7 @@
 ﻿@media (max-width: 480px) {
+	a {
+		data-iconpos: notext;
+	}
   #settingscontentdiv {
    /* background: none repeat scroll 0 0;*/
     border: 1px solid gray;
@@ -17,7 +20,7 @@
     width: 70%;
     margin :auto;
   }
-
+  
 
 /* for date box*/
   .date .ui-input-text {
@@ -96,7 +99,9 @@
 }
 
 @media (min-width: 481px) and (max-width: 720px) {
-
+	a {
+		data-iconpos: notext;
+	}
   #settingscontentdiv {
    /* background: none repeat scroll 0 0;*/
     border: 1px solid gray;

@@ -12,12 +12,10 @@ define([], function (jio, jio_state, jio_project) {
     //date in format "dd/mm/yyyy"
     start1 = new Date(start[1] + "/" + start[0] + "/" + start[2]);
     end1 = new Date(end[1] + "/" + end[0] + "/" + end[2]);
-    //console.log(document.getElementById("title").value);
     if (document.getElementById("title").value === "") {
       alert("Title is required");
       return false;
     }
-
     if (document.getElementById("begindate").value === "") {
       alert("Begin date is required");
       return false;
@@ -233,8 +231,13 @@ define([], function (jio, jio_state, jio_project) {
               console.log(error);
             });
             document.getElementById("title").value = "";
-            document.getElementById("project").value = "";
-            document.getElementById("state").value = "";
+            //document.getElementById("project").value = "";
+            //document.getElementById("state").value = "";
+					/*-	$("#project").find('option[value="#"]').attr('selected', "1");
+						$("#project").selectmenu("refresh");
+		        $("#state").find('option[value="#"]').attr('selected', "1");
+		        $("#state").selectmenu("refresh");*/
+					$("#project").selectmenu("refresh");
             document.getElementById("description").value = "";
             document.getElementById("begindate").value = "";
             document.getElementById("enddate").value = "";
@@ -243,8 +246,6 @@ define([], function (jio, jio_state, jio_project) {
       } else { // editing task the ID is in hidden input field
         jio.put(object);
         document.getElementById("title").value = "";
-        document.getElementById("project").value = "";
-        document.getElementById("state").value = "";
         document.getElementById("description").value = "";
         document.getElementById("begindate").value = "";
         document.getElementById("enddate").value = "";

@@ -5,6 +5,8 @@
   require.config({
   //  waitSeconds :  (IS_LOCAL? 10 : 45),
     paths: {
+			css: "plugins/require-css/css",
+			normalize: "plugins/require-css/normalize",
       //jquery and jqm plugin
       jquery:      "plugins/jquery/jquery-1.8.3",
       jqm:         "plugins/jquerymobile/jquery.mobile-1.3.1",
@@ -54,7 +56,12 @@
         exports: "RenderJs"
         },
       "overrides": {deps: ["jquery"]}
-    }
+    },
+    map: {
+			"*": {
+				"css": "plugins/require-css/css"
+			}
+		}
   });
   // use almond when building into a single file for phonegap
   define(
@@ -75,11 +82,17 @@
       "revisionstorage",
       "complex_queries",
       //pages modules
-      "overrides"
+      "overrides",
+			"css!../pmapi.css",
+			"css!plugins/jquerymobile/jquery.mobile-1.3.1",
+			"css!plugins/datebox/jqm-datebox.min.css",
+			"css!plugins/datebox/jquery.mobile.simpledialog.min.css",
+			"css!plugins/datebox/datebox.css"
     ],
     function () {
       require(['app'], function (App) {
         App.start();
+        window.App = App;
       });
     }
   );

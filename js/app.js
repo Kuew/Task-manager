@@ -116,27 +116,22 @@ define([], function () {
 
     $(document).on("pageshow", "#details", function () {
       setTimeout(function () {
-        // Do something after 5 milli seconds
-        //window.App.populateDetails(jio, jio_state, jio_project);
         App.populateDetails(jio, jio_state, jio_project);
-      }, 70);
+      }, 150);
     });
 
     $(document).on("pagecreate.settings_setup", "#settings", function () {
       $(document).off(".settings_setup");
       require(["settingsMod"], function (settings) {
         settings.init(jio, jio_state, jio_project);
-        //window.App.populateSettings = settings.populateSettings;
         App.populateSettings = settings.populateSettings;
       });
     });
 
     $(document).on("pageshow", "#settings", function () {
       setTimeout(function () {
-        // Do something after 5 milli seconds
-        //window.App.populateSettings(jio, jio_state, jio_project);
         App.populateSettings(jio, jio_state, jio_project);
-      }, 50);
+      }, 100);
     });
 
     $.mobile.initializePage();
