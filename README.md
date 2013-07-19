@@ -18,29 +18,33 @@ In this project we are using the following web technologies:
 ### Functionalities###
 ----------------------
 Task manager is an application providing the following functionalities:
-*Display a list of task for one project*
-*Display a list of project within the corresponding tasks*
-*Create, update and remove a task*
-*Filtern a list of task about (title, dates, state)*
+* Display a list of task for one project
+* Display a list of project within the corresponding tasks
+* Create, update and remove a task
+* Filtern a list of task about (title, dates, state)
 
 ###How to run?###
 ---------------------------------------------------------------
+
 Two way provided to test the application(No easy):
 
 * Using the browser
-				Just click on the above *Download zip* button or just click 
-				[download sources](https://github.com/marcellintabou/Task-manager/archive/master.zip)
-				and unzip the folder in you localhost and run in your browser. To have a 
-				mobile effect, you can resize your browser sceen from bigger to smaller 
-				resolution and see how the application is displayed. If y are using firefox
-				 newer version,just select __Tool > Web developper > Responsible design view__.
-        Shortcut: **Ctrl+ALT+M**. 
+				
+    Just click on the above *Download zip* button or just click
+    [download sources](https://github.com/marcellintabou/Task-manager/archive/master.zip)
+    and unzip the folder in you localhost and run in your browser. To have a 
+    mobile effect, you can resize your browser sceen from bigger to smaller 
+    resolution and see how the application is displayed. If y are using firefox
+    newer version,just select __Tool > Web developper > Responsible design view__.
+    Shortcut: **Ctrl+ALT+M**. 
 
-* Directely downloading via your mobile device(very easy)
-				Follow this link[download page]()and select the cersion supporte by your mobile OS, download and install
-				On the mobile.
+* Directely downloading via your mobile device(very easy):
+    Follow this link [download page]() and select the cersion supporte by your mobile OS, download and install
+    On the mobile.
+
+
 ###Browsers supported:###
------------------------------------------------------------------------
+-------------------------
 - Firefox: 3.5
 - Chrome: 4+
 - Internet Explorer: 8+
@@ -49,4 +53,5 @@ Two way provided to test the application(No easy):
 - iPhone: 2.0+
 - Android: 2.0+
 - and probably something else.
+
 Many functionalities(Map, RSS reader, ...) are still to come. This is just the learning behaview.
