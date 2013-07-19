@@ -89,11 +89,12 @@ define([], function () {
         "enddate": "13/08/2013",
         "state": "complete",
         "description": "task on jQuery"
-      });
-   // });
-
-    $(document).on("pagebeforeshow", "#index", function () {
-      //$(document).off(".index_setup");
+      }, function(e, r){console.log(r)});
+/*
+		console.log($("#index"));*/
+    //$(document).on("pagebeforeshow", "#index", function () {
+			$( "#index").on("pagebeforeshow", function () {
+      console.log("requiring index");
       require(["indexMod"], function (indexmod) {
         indexmod.init(jio, jio_state);
       });

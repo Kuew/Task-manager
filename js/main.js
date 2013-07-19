@@ -92,7 +92,7 @@
     function () {
       require(['app'], function (App) {
         App.start();
-        window.App = App;
+        //window.App = App;
       });
     }
   );
