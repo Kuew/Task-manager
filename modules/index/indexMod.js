@@ -78,7 +78,7 @@ define([], function (jio, jio_state) {
       if ((filterValue === undefined) || (val !== filterValue)) {
         timer = window.setTimeout(function () {
           timer = null;
-          filterValue = val;
+          filterValue = val.trim();
           sort_string = "title: = %" + filterValue +
             "% OR project: = %" + filterValue +
               "% OR begindate: = %" +  filterValue +
