@@ -7,24 +7,24 @@
     <script data-main="js/main" src="js/require.js"></script>
   </head>
   <body>
-    <div data-role="page" id="settings" data-theme="a">
+    <div data-role="page" id="settings" data-theme="c">
       <!-- header -->
-      <div data-role="header" data-mini="true" data-inline="true">
+      <div data-role="header" data-mini="true" data-inline="true" >
         <div data-role="navbar" data-iconpos="left">
           <a href="index.html" data-icon="back" data-rel="back" data-direction="reverse" class="tohidde">Back</a>
         </div>
       </div>
       <!-- content -->
-      <div data-role="content" data-theme="c" data-mini='true' id='settingscontentdiv'>
-        <div data-role="controlgroup" id='settingscontent' data-theme="a" data-mini='true'></div>
-        <div data-role="popup" id="statepopup" data-shadow="false" data-theme='a' class="ui-content"></div>
-        <div data-role="popup" id="projectpopup" data-shadow="false" data-theme='a' class="ui-content"></div>
+      <div data-role="content" data-mini='true' id='settingscontentdiv' data-theme="a">
+        <div data-role="controlgroup" id='settingscontent'  data-mini='true'></div>
+        <div data-role="popup" id="statepopup" data-shadow="false" data-mini='true'  class="ui-content" data-theme="a"></div>
+        <div data-role="popup" id="projectpopup" data-shadow="false" data-mini='true' class="ui-content" data-theme="a"></div>
       </div>
       <!-- footer -->
       <div data-role="footer" class="ui-bar" data-mini="true" data-position="fixed">
         <div data-role="controlgroup" data-type="horizontal">
-          <a href="project.html" data-role="projectbutton" class="projectbutton" data-icon="arrow-u">Project</a>
-          <a href="index.html" class="tasklistbutton ui-btn-active" data-icon="arrow-u" >Task</a>
+          <a href="project.html" data-role="button" class="projectbutton" data-icon="arrow-u">Project</a>
+          <a href="index.html" class="tasklistbutton ui-btn-active" data-icon="arrow-u" data-role="button">Task</a>
           <a href="#" data-role="button" data-icon="gear" class="settingsbutton">Settings</a>
         </div>
       </div>

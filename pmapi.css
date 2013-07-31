@@ -1,28 +1,29 @@
 ﻿@media (max-width: 480px) {
-	a {
-		data-iconpos: notext;
-	}
+  .newtaskbutton {
+    text-indent: -9999em;
+  }
+
   #settingscontentdiv {
-   /* background: none repeat scroll 0 0;*/
+			/* background: none repeat scroll 0 0;*/
     border: 1px solid gray;
     font-size: 0.5em !important;
     width: 75%;
     margin: auto;
   }
 
-/**************************************/
-/** RESPONSIBLE CSS FOR DETAILS PAGE **/
+		/**************************************/
+		/** RESPONSIBLE CSS FOR DETAILS PAGE **/
 
   #myResult {
-    /*background: none repeat scroll 0 0;*/
+			/*background: none repeat scroll 0 0;*/
     border: 1px solid gray;
     text-align: center;
     width: 70%;
-    margin :auto;
+    margin: auto;
   }
-  
 
-/* for date box*/
+
+		/* for date box*/
   .date .ui-input-text {
     display: block;
     width: 95% !important;
@@ -35,20 +36,19 @@
   }
 
   .ui-field-contain, .ui-mobile fieldset.ui-field-contain {
-    /*margin: 0.1em 0;*/
+					/*margin: 0.1em 0;*/
     padding: 0;
   }
 
   label.ui-select {
     font-size: 16px;
     font-weight: normal;
-    /*line-height: 1.4;*/
+						/*line-height: 1.4;*/
     padding: 0em;
     margin: 0.6em 0.6em 0.6em 0.5em;
   }
 
   .fieldcontain1.ui-field-contain.ui-body.ui-br {
-    border: ;
     padding: 0.2em;
     text-align: left;
     width: 99%;
@@ -58,7 +58,7 @@
     display: inline-block;
     margin: 0 1% 0 0;
     vertical-align: middle;
-    width: 35%;
+    width: 40%;
   }
 
   #details .ui-field-contain label.ui-select {
@@ -66,9 +66,9 @@
     vertical-align: middle;
     width: 35%;
   }
-/******************************/
-/**  END DETAILS RESPONSIBLE **/
-/******************************/
+								/******************************/
+								/**  END DETAILS RESPONSIBLE **/
+								/******************************/
 
   input {
     width: 30%;
@@ -95,31 +95,27 @@
 
   .titleSpan {
     font-size: 0.8em;
-  };
+  }
 }
 
 @media (min-width: 481px) and (max-width: 720px) {
-	a {
-		data-iconpos: notext;
-	}
   #settingscontentdiv {
-   /* background: none repeat scroll 0 0;*/
+			/* background: none repeat scroll 0 0;*/
     border: 1px solid gray;
-    text-align:;
     width: 55%;
     margin: auto;
   }
-  /**************************************/
-/** RESPONSIBLE CSS FOR DETAILS PAGE **/
+		  /**************************************/
+			/** RESPONSIBLE CSS FOR DETAILS PAGE **/
   #myResult {
-  /*  background: none repeat scroll 0 0;*/
+				/*  background: none repeat scroll 0 0;*/
     border: 2px solid gray;
     text-align: center;
     width: 45%;
     margin: auto;
   }
 
-/* for date box*/
+			/* for date box*/
   .date .ui-input-text {
     display: block;
     width: 95% !important;
@@ -140,7 +136,7 @@
     font-weight: normal;
     line-height: 1.4;
     padding: 0em;
-    margin:auto;
+    margin: auto;
   }
 
   .fieldcontain1.ui-field-contain.ui-body.ui-br {
@@ -154,7 +150,7 @@
     display: inline-block;
     margin: 0 1% 0 0;
     vertical-align: middle;
-    width: 30%;
+    width: 40%;
   }
 
   #details .ui-field-contain label.ui-select {
@@ -163,9 +159,9 @@
     vertical-align: middle;
     width: 20%;
   }
-/******************************/
-/**  END DETAILS RESPONSIBLE **/
-/******************************/
+									/******************************/
+									/**  END DETAILS RESPONSIBLE **/
+									/******************************/
 
   input {
     width: 30%;
@@ -192,29 +188,28 @@
 
   .titleSpan {
     font-size: 0.85em;
-  };
+  }
 }
 
 @media (min-width: 721px) {
 
   #settingscontentdiv {
-   /* background: none repeat scroll 0 0;*/
-    border:1px solid gray;
-    text-align:;
-    width: 35%;
+		/* background: none repeat scroll 0 0;*/
+    border: 1px solid gray;
+    width: 30%;
     margin: auto;
   }
 
-/**************************************/
-/** RESPONSIBLE CSS FOR DETAILS PAGE **/
+	/**************************************/
+	/** RESPONSIBLE CSS FOR DETAILS PAGE **/
   #myResult {
-   /* background: none repeat scroll 0 0;*/
+		/* background: none repeat scroll 0 0;*/
     border: 1px solid gray;
     text-align: center;
     width: 35%;
     margin: auto;
   }
-/* for date box*/
+	/* for date box*/
   .date .ui-input-text {
     display: block;
     width: 100% !important;
@@ -222,7 +217,7 @@
     padding: 1px;
   }
 
-/*cdisplay controlgroup button center in detail page*/
+	/*cdisplay controlgroup button center in detail page*/
   .cg {
     text-align: center;
   }
@@ -257,9 +252,9 @@
     width: 100%;
   }
 
-/******************************/
-/**  END DETAILS RESPONSIBLE **/
-/******************************/
+	/******************************/
+	/**  END DETAILS RESPONSIBLE **/
+	/******************************/
 
   div.input {
     background: none repeat scroll 0 0 gray;
@@ -276,13 +271,13 @@
 
   .myspan {
     color: green;
-/*brown*/
+										/*brown*/
     font-size: 0.85em;
   }
 
   .titleSpan {
     font-size: 1em;
-  };
+  }
 }
 /** end media query**/
 /********************/
@@ -305,23 +300,21 @@
 /*** END ***/
 /***********/
 
-
-
 /**************************/
 /** begin  settings.html **/
 #settingscontentdiv {
-   margin-top: 5%;
-   margin-bottom: 5%;
-   border-radius: 3%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  -webkit-border-radius: 3%;
+  border-radius: 3%;
 }
+
 #projectsset {
-  background: ;
-  border: 0.05em solid gray;
+	border: 0.05em solid gray;
 }
 
 #statesset {
-  background: ;
-  border: 0.05em solid gray;
+	border: 0.05em solid gray;
 }
 
 .controlsclass {
@@ -329,7 +322,7 @@
   padding: 0.8em;
   margin: 0.2em;
 }
-/** end settings.html **/
+/** end settings **/
 /***********************/
 
 
@@ -370,59 +363,29 @@ label.ui-select {
   width: 95%;
 }
 
+.fieldcontain1 {
+  background-color: gray;
+}
+
 #myResult {
-    margin-top:5%;
-    margin-bottom:5%;
-    border-radius: 3% 3% 3% 3%;
-  }
+  margin-top: 5%;
+  margin-bottom: 5%;
+	/* border-radius: 3% 3% 3% 3%;*/
+  -webkit-border-radius: 3%;
+  border-radius: 3%;
+}
 /**  END DETAILS **/
 /***********/
 
-
-
-#mypopup .ui-controlgroup, fieldset.ui-controlgroup {
-  margin: 0.5em;
-  padding: 0.5em;
-}
-
-.popupstatelabel label.ui-select {
-  border: 1px solid;
-  display: block;
-  font-size: 16px;
-  font-weight: normal;
-  line-height: 1.4;
-  margin: 0.5em 0.5em 0.9em 0.3em;
-  padding: 0.2em;
+#mypopup {
+  margin: 0.1em;
+  padding: 0.1em;
+  background-color: gray;
 }
 
 .ui-field-contain .ui-select {
   display: inline-block;
   width: 40%;
-}
-
-#sortpopup {
-  padding: 0.3em;
-}
-
-.required {
-  border: 1px solid red !important;
-  background:;
-}
-
-#newfoo label.error {
-  color: red;
-}
-
-#newfoo input.error {
-  border: 1px solid red;
-}
-
-#editfoo label.error {
-  color: red;
-}
-
-#editfoo input.error {
-  border: 1px solid red;
 }
 
 .ui-disabled {
@@ -431,5 +394,33 @@ label.ui-select {
 }
 
 .ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
-  width: 8em;
+  width: 9em;
 }
+
+.ui-icon-datebox {
+  background-image: url("images/datebox.png") !important;
+  background-position: 99% 8px !important;
+  background-repeat: no-repeat !important;
+}
+
+.ui-popup {
+  padding: 4px !important;
+  position: relative !important;
+}
+
+.ui-field-contain, .ui-mobile fieldset.ui-field-contain {
+  border-bottom-width: 0!important;
+  margin: 0!important;
+  padding: 0!important;
+}
+
+#projectpopup {
+  background-color: gray;
+  max-width: 162px;
+}
+
+#statepopup {
+  background-color: gray;
+  max-width: 162px;
+}
+

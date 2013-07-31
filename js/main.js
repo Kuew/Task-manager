@@ -9,7 +9,7 @@
 			normalize: "plugins/require-css/normalize",
       //jquery and jqm plugin
       jquery:      "plugins/jquery/jquery-1.8.3",
-      jqm:         "plugins/jquerymobile/jquery.mobile-1.3.1",
+      jqm:         "plugins/jquerymobile/jquery.mobile-1.4.0",
       //datebox plugin
       dateboxCoreMin:    "plugins/datebox/jqm-datebox.core.min",
       dbxModeDateboxMin: "plugins/datebox/jqm-datebox.mode.datebox.min",
@@ -17,7 +17,6 @@
       dbxI18nEnUsUtf: "plugins/datebox/jqm.datebox.i18n.en_US.utf8",
       simpledialogMin:   "plugins/datebox/jqm.simpledialog.min",
       gpretty_prettify:  "plugins/datebox/gpretty_prettify",
-      renderjs:   "plugins/renderjs/renderjs",
       //jio plugins
       jio: "plugins/jio/jio",
       md5: "plugins/jio/md5",
@@ -25,13 +24,8 @@
       localstorage: "plugins/jio/localstorage",
       revisionstorage: "plugins/jio/revisionstorage",
       complex_queries: "plugins/jio/complex_queries",
-      // page modules
-      app: "app",
-      indexMod: "../modules/index/indexMod",
       overrides: "overrides",
-      projectMod: "../modules/project/projectMod",
-      detailsMod: "../modules/details/detailsMod",
-      settingsMod: "../modules/settings/settingsMod"
+			pmapi: "../pmapi"
     },
     shim: {
       "jio": {deps: ["md5"]},
@@ -46,15 +40,7 @@
       "dbxI18nEnUsUtf": {deps: ["dateboxCoreMin"]},
       "dbxModeDateboxMin": {deps: ["dateboxCoreMin"]},
       "dbxModeCalboxMin": {deps: ["dateboxCoreMin"]},
-      "renderjs": {deps: [
-        "jquery",
-        "jio",
-        "md5",
-        "localstorage",
-        "complex_queries"
-      ],
-        exports: "RenderJs"
-        },
+      "pmapi": {deps: ["jqm", "complex_queries", "dateboxCoreMin"]},
       "overrides": {deps: ["jquery"]}
     },
     map: {
@@ -74,26 +60,22 @@
       "dbxI18nEnUsUtf",
       "simpledialogMin",
       "gpretty_prettify",
-      "renderjs",
       "jio",
       "md5",
       "response",
       "localstorage",
       "revisionstorage",
       "complex_queries",
-      //pages modules
       "overrides",
 			"css!../pmapi.css",
-			"css!plugins/jquerymobile/jquery.mobile-1.3.1",
+			"css!plugins/jquerymobile/jquery.mobile-1.4.0",
 			"css!plugins/datebox/jqm-datebox.min.css",
 			"css!plugins/datebox/jquery.mobile.simpledialog.min.css",
-			"css!plugins/datebox/datebox.css"
+			"css!plugins/datebox/datebox.css",
+      "pmapi"
     ],
-    function () {
-      require(['app'], function (App) {
-        App.start();
-        //window.App = App;
-      });
+    function () { 
+      console.log("1: main loadeding dependences");
     }
   );
 }());
