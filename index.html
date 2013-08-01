@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
     <title>Home</title>
@@ -12,19 +12,19 @@
        <!-- header-->
       <div data-role="header" data-mini="true" data-inline="true">
         <select name="sortby" id="sortby" data-inline="true" data-mini="true">
-          <option value="#">sort by&nbsp;</option>
+          <option value="#">sort by</option>
           <option value="title">Title</option>
           <option value="begindate">Begin date</option>
           <option value="enddate">End date</option>
           <option value="state">State</option>
         </select>
       
-        <H1>Task manager</H1>
+        <H3>Task manager</H3>
         <a href="details.html" class="newtaskbutton ui-btn-right" data-icon="plus" >New task</a>
       </div>
       <!-- content-->
       <div data-role="content" data-theme="a">
-	      <ol data-theme="d" data-role="listview" class="content-listview" data-filter="true" data-inset="true" data-filter-placeholder="filter by title, state, date, project"></ol>
+	      <ul data-theme="d" data-role="listview" class="content-listview" data-filter="true" data-inset="true" data-filter-placeholder="filter by title, state, date, project"></ul>
 	      <div data-role="popup" id="mypopup" data-shadow="false"  data-theme="a" data-mini="true" ></div>
       </div>
       <!-- footer -->
