@@ -1,4 +1,6 @@
 @media (max-width: 480px) {
+
+
   .newtaskbutton {
     text-indent: -9999em;
   }
@@ -14,7 +16,6 @@
 
   #myResult {
     border: 1px solid gray;
-    text-align: center;
     margin: auto !important;
     background-color: gray;
   }
@@ -29,19 +30,6 @@
 
   .ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
     width: 90%;
-  }
-
-  label.ui-select {
-    font-size: 16px;
-    font-weight: normal;
-    padding: 0em;
-    margin: 0.6em 0.6em 0.6em 0.5em;
-  }
-
-  .fieldcontain1.ui-field-contain.ui-body.ui-br {
-    border: 1px solid gray;
-    padding: 0.2em;
-    text-align: left;
   }
 
 	/******************************/
@@ -110,13 +98,7 @@
     margin: auto;
   }
 
-  label.ui-select {
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 1.4;
-    padding: 0em;
-    margin: auto;
-  }
+ 
 
   .fieldcontain1.ui-field-contain.ui-body.ui-br {
     border: 1px solid gray;
@@ -125,19 +107,7 @@
     width: 95%;
   }
 
-  #details .ui-field-contain label.ui-input-text {
-    display: inline-block;
-    margin: 0 1% 0 0;
-    vertical-align: middle;
-    width: 40%;
-  }
 
-  #details .ui-field-contain label.ui-select {
-    display: inline-block;
-    margin: 0 1% 0 0;
-    vertical-align: middle;
-    width: 20%;
-  }
   
   
 	/******************************/
@@ -212,13 +182,6 @@
     padding: 0;
   }
 
-  label.ui-select {
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 1.4;
-    padding: 0em;
-    margin: auto;
-  }
 
   .fieldcontain1.ui-field-contain.ui-body.ui-br {
     border: 1px solid gray;
@@ -325,15 +288,6 @@
 .ui-field-contain, .ui-mobile fieldset.ui-field-contain {
   margin: 0.1em 0;
 }
-/*
-label.ui-select {
-  font-size: 16px;
-  font-weight: normal;
-  line-height: 1.4;
-  padding: 0em;
-  margin: auto;
-}
-*/
 
 .fieldcontain1 {
 	/*background-color: gray;*/;
@@ -389,3 +343,6 @@ label.ui-select {
   padding: 0;
 }
 
+body {
+    -webkit-backface-visibility: hidden;
+}

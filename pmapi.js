@@ -5,7 +5,7 @@ document, $, confirm, location, parent*/
 (function () {
   "use strict";
   console.log("2: pmapi file loaded");
-  //console.log(new Date());
+  $.mobile.autoInitializePage = false;
   jQuery.extend(jQuery.mobile.datebox.prototype.options, {
     'overrideDateFormat': '%d/%m/%Y',
     'overrideHeaderFormat': '%d/%m/%Y'
@@ -124,8 +124,7 @@ document, $, confirm, location, parent*/
   // call instertasks whitch call displaytasks
   insertprojects(0);
 
-  
-  function displaytasks() { 
+  function displaytasks() {
     /*********************************************************/
     /****************** interaction for index page *****************/
     /*********************************************************/
@@ -146,8 +145,6 @@ document, $, confirm, location, parent*/
       jio.allDocs(
         { "include_docs": true },
         function (err, response) {
-          console.log(response);
-          //console.log(new Date());
           var i, ftext, current_row;
           for (i = 0; i < response.total_rows; i += 1) {
             current_row = response.rows[i].doc;
@@ -163,17 +160,13 @@ document, $, confirm, location, parent*/
               "<span class='titleSpan'>" + current_row.title + "</span><br/>" +
               "<i>from " + current_row.begindate + "&nbsp;to " +
               current_row.enddate + "</i><br/>" + "<span class='myspan'>" +
-              current_row.state + "</span></a><a " +
-              "data-id= '" + current_row._id + "' data-position-to='window' " +
-              "class='popupbutton' data-rel='popup' " +
-              "href='#mypopup' data-icon='gear'></a></li>";
+              current_row.state + "</span></a></li>";
           }
           $(".content-listview").empty().append(str).listview("refresh");
           $("#sortby").val("#").selectmenu("refresh");
           $(".ui-bar").trigger("create");
         }
       );
-    //}, 50);
     });
 
     // ===================== element bindings ===========================
@@ -232,10 +225,7 @@ document, $, confirm, location, parent*/
                   "'><span class='titleSpan'>" + cur_row.title +
                   "</span><br/><i>from " + cur_row.begindate + "&nbsp;to " +
                   cur_row.enddate + "</i><br/><span class='myspan'>" +
-                  cur_row.state + "</span></a><a data-role='button' " +
-                  " data-position-to='window'" +
-                  " class='popupbutton' data-rel='popup' href='#mypopup' " +
-                  "data-icon='gear'></a></li>";
+                  cur_row.state + "</span></a></li>";
               }
               $(".content-listview").empty().append(str).listview("refresh");
               $("#sortby").val("#").selectmenu("refresh");
@@ -243,75 +233,6 @@ document, $, confirm, location, parent*/
           );
         }, 500);
       }
-    });
-
-    // ===================== document bindings ===========================
-    //displying the popup to change a task state
-    $(document).on("click.marco", ".popupbutton", function (e) {
-
-      jio_state.allDocs(
-        { "include_docs": true },
-        function (err, response) {
-          var i, str, cur_row;
-          str = "<form id='foo'><label for='select-state' " +
-            "class='popupstatelabel'><select name='select-state'" +
-            "data-id ='" + $(e.target).closest("a").attr("data-id") +
-            "' id='select-state' data-inline='true' data-mini='true'>" +
-            "<option value='#'>select state</option>";
-          for (i = 0; i < response.total_rows; i += 1) {
-            cur_row = response.rows[i].doc;
-            str += "<option value='" + cur_row.state + "'>" + cur_row.state +
-              "</option>";
-          }
-          str += "</select></label>" +
-            "<div data-role='controlgroup' data-mini='true' " +
-            "data-type='horizontal'>" +
-            "<a data-role='button' href='#' data-rel='back'" +
-            "data-mini='true' data-icon='delete'>NO</a> &nbsp;&nbsp;" +
-            "<a data-role='button' class='confirm' data-icon='check'" +
-            "data-mini='true' href='#'>YES</a></div></form>";
-          $("#mypopup").empty().append(str).trigger("create");
-        }
-      );
-    });
-
-    // ===================== document bindings ===========================
-    //Saving task state choosen from popup menu in jIO and refresh list item
-    $(document).on("click", ".confirm", function (e, data) {
-      var r;
-      if ($(this).attr("data-bound") === undefined) {
-        if ((document.getElementById("select-state").value !== "#")) {
-          r = confirm("Are you sure, the status of task " +
-            document.getElementById("select-state")
-              .attributes["data-id"].value + " should change to " +
-            document.getElementById("select-state").value);
-          if (r === true) {
-            jio.get(
-              {"_id": document.getElementById("select-state")
-                      .attributes["data-id"].value },
-              function (err, resp) {
-                resp.state = document.getElementById("select-state").value;
-                jio.put(resp, function (err, response2) {
-                  jio.get({"_id": document.getElementById("select-state")
-                                  .attributes["data-id"].value});
-                });
-                //refresh the task state list item
-                $("#" + resp._id).html("<span class='titleSpan'>" +
-                  resp.title + "</span><br/><i>from &nbsp;" +
-                  resp.begindate + "&nbsp;to&nbsp;" + resp.enddate + "</i>" +
-                  "<br/><span class='myspan'>" + resp.state + "</span>");
-                $("#" + resp._id).parent().toggleClass('li-active');
-              }
-            );
-            $("#mypopup").popup("close");
-          } else {
-            $("#mypopup").popup("close");
-          }
-        } else { //no ready to change state, so let's close the popup
-          $("#mypopup").popup("close");
-        }
-      }
-      $(this).attr("data-bound", "true");
     });
 
     // ================ document bindings ====================
@@ -351,10 +272,8 @@ document, $, confirm, location, parent*/
               "' href= 'details.html?_id=" + cur_row._id + "'>" +
               "<span class='titleSpan'>" + cur_row.title + "</span><br/>" +
               "<i>from " + cur_row.begindate + "&nbsp;to " + cur_row.enddate +
-              "</i><br/><span class='myspan'>" + cur_row.state + "</span></a>" +
-              "<a data-role='button' data-id= '" +  cur_row._id + "' " +
-              "data-position-to='window' class='popupbutton' data-rel='popup'" +
-              "href='#mypopup' data-icon='gear'></a></li>";
+              "</i><br/><span class='myspan'>" + cur_row.state +
+              "</span></a></li>";
           }
           $(".content-listview").empty().append(str).listview("refresh");
         }
@@ -773,57 +692,51 @@ document, $, confirm, location, parent*/
         {"include_docs": true},
         function (err, response) {
           var i;
-          statestr = "<div data-role='fieldcontain' data-mini='true' " +
-            "class='ui-hide-label'>" +
-            "<label for='state'></label><select name='state' id='state'" +
-            "data-id ='state' data-inline='true' data-mini='true'" +
-            " ><option value='#'>-- state --</option>";
+          statestr = "<select name='state' id='state' data-id ='state' " +
+            " data-inline='true' data-mini='true' >" +
+            "<option value='#'>-- state --</option>";
           for (i = 0; i < response.total_rows; i += 1) {
             statestr += "<option value='" + response.rows[i].doc.state + "'>" +
               response.rows[i].doc.state + "</option>";
           }
-          statestr += "</select></div>";
+          statestr += "</select>";
           // creating projects select list
           jio_project.allDocs(
             {"include_docs": true},
             function (err, resp) {
-              // console.log(response);
               var i, str = "", params, attArray;
-              projectstr = "<div data-role='fieldcontain' data-mini='true' " +
-                " class='ui-hide-label'><label for='project'></label>" +
-                "<select name='project' data-id ='project' id='project' " +
-                "data-inline='true' data-mini='true'>" +
+              projectstr = "<select name='project' data-id ='project'" +
+                " id='project' data-inline='true' data-mini='true'>" +
                 "<option value='#'>-- project --</option>";
               for (i = 0; i < resp.total_rows; i += 1) {
                 projectstr += "<option value='" + resp.rows[i].doc.project +
                   "'>" + resp.rows[i].doc.project + "</option>";
               }
-              projectstr += "</select></div>";
+              projectstr += "</select>";
               if (ch.length === 0) { // New task
                 console.log("new task");
-                str = "<form><div data-role='fieldcontain' " +
-                  "data-mini='true' class='ui-hide-label'><label for='title'>" +
-                  "Title:</label><input type='text' id='title' name='title' " +
+                str = "<form><div data-role='fieldcontain' data-mini='true'>" +
+                  "<input type='text' id='title' name='title' " +
                   "data-mini='true' placeholder='Title'/>" +
                   "<input type='hidden' id='id' name='id'  value='auto'/>" +
-                  "<label for='begindate' class='datelabel'>Begin date:" +
-                  "</label><input name='begindate' id='begindate' " +
+                  "<input name='begindate' id='begindate' " +
                   "data-role='datebox'  placeholder='Begin date' " +
                   "data-options='{\"mode\":\"calbox\", " +
                   "\"useNewStyle\":true}' type='text' data-mini='true'/>" +
-                  "<label for='enddate'  class='datelabel'>End date:</label>" +
                   "<input name='enddate' id='enddate' data-role='datebox'" +
                   " type='text' " +
                   "data-options='{\"mode\":\"calbox\", \"useNewStyle\": " +
                   "true}' data-mini='true'  placeholder='End date'/>" +
-                  projectstr + statestr +
-                  "<div data-role='fieldcontain' data-mini='true' " +
-                  " class='ui-hide-label'><label for='description'></label>" +
+                  "<div data-role='fieldcontain' data-mini='true' >" +
+                  projectstr + "</div>" +
+                  "<div data-role='fieldcontain' data-mini='true' >" +
+                  statestr + "</div>" +
+                  "<div data-role='fieldcontain' data-mini='true' >" +
                   "<textarea name='description' id='description' " +
                   " data-mini='true' placeholder='description'>" +
                   "</textarea></div><br/>" +
                   "<div data-role='controlgroup' data-type='horizontal' " +
-                  "class='cg'><a href='index.html' data-mini='true' " +
+                  "><a href='index.html' data-mini='true' " +
                   "class='deletetaskbutton ui-disabled' data-icon='delete' " +
                   "data-role='button'>" +
                   "Delete</a><a href='index.html' " +
@@ -874,17 +787,11 @@ document, $, confirm, location, parent*/
                       "data-options=" +
                       "'{\"mode\":\"calbox\", \"useNewStyle\":true}'" +
                       "data-mini='true' value='" + response[0].enddate + "'" +
-                      " type='text'/>" +
-                      "<div data-role='fieldcontain' data-mini='true'>" +
-                      "<label for='state'>State:</label>" +
-                      "<input id='state' type='text' value='" +
-                      response[0].state + "'" + "disabled='true' " +
-                      "name='state' data-mini='true' /></div>" +
-                      "<div data-role='fieldcontain' data-mini='true'>" +
-                      "<label for='project'>Project:</label>" +
-                      "<input id='project' value='" + response[0].project +
-                      "' disabled='true' name='project' data-mini='true' " +
-                      " type='text'/></div>" +
+                      " type='text'/><div data-role='fieldcontain' " +
+                      "data-mini='true'><label for='project'>Project:</label>" +
+                      projectstr + "</div><div data-role='fieldcontain' " +
+                      "data-mini='true'><label for='project'>Project:</label>" +
+                      statestr + "</div>" +
                       "<div data-role='fieldcontain' data-mini='true'><label" +
                       " for='description'>Description:</label><textarea " +
                       "name='textarea' id='description' data-mini='true' >" +
@@ -897,6 +804,9 @@ document, $, confirm, location, parent*/
                       "data-mini='true' data-icon='check' data-role='button'" +
                       ">Save</a></div></form>";
                     $(".fieldcontain1").empty().append(str).trigger("create");
+                    $("#project")
+                       .val(response[0].project).selectmenu("refresh");
+                    $("#state").val(response[0].state).selectmenu("refresh");
                   });
               }
             }
@@ -980,7 +890,7 @@ document, $, confirm, location, parent*/
       }
       return false;
     });
+
     $.mobile.initializePage();
-    $(".ui-bar").trigger("create");
   }
 }());
