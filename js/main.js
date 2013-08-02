@@ -75,7 +75,7 @@
       "pmapi"
     ],
     function () { 
-      console.log("1: main loadeding dependences");
+      console.log("2: main dependences loaded ");
     }
   );
 }());

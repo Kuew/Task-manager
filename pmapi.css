@@ -35,12 +35,12 @@
 	/******************************/
 	/**  END DETAILS RESPONSIBLE **/
 	/******************************/
-
+/*
   input {
     width: 30%;
     padding: 5px;
   }
-
+*/
   div.input {
     background: none repeat scroll 0 0 gray;
   }
@@ -74,7 +74,6 @@
 		  /**************************************/
 			/** RESPONSIBLE CSS FOR DETAILS PAGE **/
   #myResult {
-				/*  background: none repeat scroll 0 0;*/
     border: 2px solid gray;
     text-align: center;
     width: 45%;
@@ -209,7 +208,6 @@
 
   .myspan {
     color: green;
-										/*brown*/
     font-size: 0.85em;
   }
 
@@ -289,9 +287,6 @@
   margin: 0.1em 0;
 }
 
-.fieldcontain1 {
-	/*background-color: gray;*/;
-}
 /** END DETAILS **/
 /*****************/
 

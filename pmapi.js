@@ -4,7 +4,7 @@ setTimeout, insertstates, insertprojects, inserttasks, displaytasks, define,
 document, $, confirm, location, parent*/
 (function () {
   "use strict";
-  console.log("2: pmapi file loaded");
+  console.log("1: pmapi file loaded");
   $.mobile.autoInitializePage = false;
   jQuery.extend(jQuery.mobile.datebox.prototype.options, {
     'overrideDateFormat': '%d/%m/%Y',
@@ -26,103 +26,104 @@ document, $, confirm, location, parent*/
       "username": "Marco",
       "application_name": "Marco_PM_project"
     }),
-    projects = [
-      {"_id": "PR-1", "project": "Daily activity"},
-      {"_id": "PR-2", "project": "Weekly activity"},
-      {"_id": "PR-3", "project": "Weekend activity"}
-    ],
-    states = [
-      { "_id": "ST-1", "state": "started"},
-      {"_id": "ST-2", "state": "continues"},
-      {"_id": "ST-3", "state": "complete"}
-    ],
-    tasks = [
-      {
-        "_id": "T-5444",
-        "title": "Jquery mobile learning",
-        "project": "Daily activity",
-        "begindate": "20/05/2013",
-        "enddate": "16/11/2013",
-        "state": "continues",
-        "description": "some description ..."
-      },
-      {
-        "_id": "T-5446",
-        "title": "Create a jQuery Mobile Task Manager",
-        "project": "Weekly activity",
-        "begindate": "01/06/2013",
-        "enddate": "30/06/2013",
-        "state": "started",
-        "description": "task manager app with JQM"
-      },
-      {
-        "_id": "T-5447",
-        "title": "Going to the restaurent",
-        "project": "Weekend activity",
-        "begindate": "11/07/2013",
-        "enddate": "12/07/2013",
-        "state": "complete",
-        "description": "task on jQuery"
-      },
-      {
-        "_id": "T-5448",
-        "title": "Going to shopping",
-        "project": "Weekend activity",
-        "begindate": "11/07/2013",
-        "enddate": "13/08/2013",
-        "state": "complete",
-        "description": "task on jQuery"
-      },
-      {
-        "_id": "T-5449",
-        "title": "Writting test module",
-        "project": "Weekly activity",
-        "begindate": "15/07/2013",
-        "enddate": "30/07/2013",
-        "state": "continues",
-        "description": "test module for jQuery"
-      }
+    data = [
+      [
+        {"_id": "PR-1", "project": "Daily activity"},
+        {"_id": "PR-2", "project": "Weekly activity"},
+        {"_id": "PR-3", "project": "Weekend activity"}
+      ],
+      [
+        { "_id": "ST-1", "state": "started"},
+        {"_id": "ST-2", "state": "continues"},
+        {"_id": "ST-3", "state": "complete"}
+      ],
+      [
+        {
+          "_id": "T-5444",
+          "title": "Jquery mobile learning",
+          "project": "Daily activity",
+          "begindate": "20/05/2013",
+          "enddate": "16/11/2013",
+          "state": "continues",
+          "description": "some description ..."
+        },
+        {
+          "_id": "T-5446",
+          "title": "Create a jQuery Mobile Task Manager",
+          "project": "Weekly activity",
+          "begindate": "01/06/2013",
+          "enddate": "30/06/2013",
+          "state": "started",
+          "description": "task manager app with JQM"
+        },
+        {
+          "_id": "T-5447",
+          "title": "Going to the restaurent",
+          "project": "Weekend activity",
+          "begindate": "11/07/2013",
+          "enddate": "12/07/2013",
+          "state": "complete",
+          "description": "task on jQuery"
+        },
+        {
+          "_id": "T-5448",
+          "title": "Going to shopping",
+          "project": "Weekend activity",
+          "begindate": "11/07/2013",
+          "enddate": "13/08/2013",
+          "state": "complete",
+          "description": "task on jQuery"
+        },
+        {
+          "_id": "T-5449",
+          "title": "Writting test module",
+          "project": "Weekly activity",
+          "begindate": "15/07/2013",
+          "enddate": "30/07/2013",
+          "state": "continues",
+          "description": "test module for jQuery"
+        }
+      ]
     ];
-
-  function insertprojects(i) {
-    jio_project.post(projects[i], function (err, rep) {
-      if (i === projects.length - 1) {
-        insertstates(0);
+  function insertstaffs(i, j) {
+    if (j === 0) { //j===0 ==> posting project
+      jio_project.post(data[0][i], function (err, rep) {
+        if (i === data[0].length - 1) {
+          insertstaffs(0, 1);
+        } else {
+          setTimeout(function () {
+            insertstaffs(i + 1, j);
+          });
+        }
+      });
+    } else {
+      if (j === 1) { //j===0 ==> posting project
+        jio_state.post(data[1][i], function (err, rep) {
+          if (i === data[1].length - 1) {
+            insertstaffs(0, 2);
+          } else {
+            setTimeout(function () {
+              insertstaffs(i + 1, j);
+            });
+          }
+        });
       } else {
-        setTimeout(function () {
-          insertprojects(i + 1);
+        jio.post(data[2][i], function (err, rep) {
+          if (i === data[2].length - 1) {
+            displaytasks();
+          } else {
+            setTimeout(function () {
+              insertstaffs(i + 1, j);
+            });
+          }
         });
       }
-    });
-  }
-
-  function insertstates(j) {
-    jio_state.post(states[j], function (err, rep) {
-      if (j === states.length - 1) {
-        inserttasks(0);
-      } else {
-        setTimeout(function () {
-          insertstates(j + 1);
-        });
-      }
-    });
-  }
-
-  function inserttasks(k) {
-    jio.post(tasks[k], function (err, rep) {
-      if (k === tasks.length - 1) {
-        displaytasks();
-      } else {
-        setTimeout(function () {
-          inserttasks(k + 1);
-        });
-      }
-    });
+    }
   }
 
   //insert projects, call insertstate whitch
   // call instertasks whitch call displaytasks
-  insertprojects(0);
+  insertstaffs(0, 0);
 
   function displaytasks() {
     /*********************************************************/
@@ -441,9 +442,10 @@ document, $, confirm, location, parent*/
         "<input type='text' name='state' id='stateid' data-mini='true'/>" +
         "<div data-role='controlgroup' data-type='horizontal' " +
         "data-mini='true'><a data-role='button' class='canceladdstate'" +
-        "data-theme='a' href='#' data-icon='delete'>NO</a>&nbsp;&nbsp;" +
-        "<a data-role='button' class='confirmaddstate'" +
-        " href='#' data-icon='check' data-theme='a'>YES</a></div></form>";
+        "data-theme='a' href='#' data-icon='delete' data-iconpos='notext' " +
+        "data-mini='true'>NO</a><a data-role='button' class='confirmaddstate'" +
+        " data-iconpos='notext' href='#' data-icon='check' data-theme='a' " +
+        "data-mini='true'>YES</a></div></form>";
       $("#statepopup").empty().append(str).trigger("create");
     });
 
@@ -452,7 +454,6 @@ document, $, confirm, location, parent*/
       var i = 0, statetr, st,
         stateToRemove = $('#stateform').serialize().split('&');
       function callback(err, resp) {
-        console.log(resp);
         jio_state.remove({"_id": resp[0]._id});
         $("#" + resp[0]._id).parent().remove();
         $('#statefieldset .ui-controlgroup-controls').trigger("create");
@@ -544,9 +545,10 @@ document, $, confirm, location, parent*/
         "value=''/><div data-role='controlgroup' data-type='horizontal' " +
         " data-mini='true'>" +
         "<a data-role='button' class='canceladdproject' data-theme='a' " +
-        "href='#' data-icon='delete'>NO</a>&nbsp;&nbsp;" +
+        "href='#' data-icon='delete' data-iconpos='notext'>NO</a>" +
         "<a data-role='button' href='#' class='confirmaddproject' " +
-        "data-icon='check' data-theme='a'>YES</a></div></form>";
+        "data-icon='check' data-theme='a' data-iconpos='notext'>YES</a>" +
+        "</div></form>";
       $("#projectpopup").empty().append(str).trigger("create");
     });
 
