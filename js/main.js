@@ -5,26 +5,25 @@
   require.config({
   //  waitSeconds :  (IS_LOCAL? 10 : 45),
     paths: {
-			css: "plugins/require-css/css",
+			css: "plugins/require-css/css.min",
 			normalize: "plugins/require-css/normalize",
       //jquery and jqm plugin
-      jquery:      "plugins/jquery/jquery-1.8.3",
+      jquery:      "plugins/jquery/jquery-1.8.3.min",
       jqm:         "plugins/jquerymobile/jquery.mobile-1.4.0",
       //datebox plugin
       dateboxCoreMin:    "plugins/datebox/jqm-datebox.core.min",
       dbxModeDateboxMin: "plugins/datebox/jqm-datebox.mode.datebox.min",
       dbxModeCalboxMin: "plugins/datebox/jqm-datebox.mode.calbox.min",
-      dbxI18nEnUsUtf: "plugins/datebox/jqm.datebox.i18n.en_US.utf8",
+      dbxI18nEnUsUtf: "plugins/datebox/jqm.datebox.i18n.en_US.utf8.min",
       simpledialogMin:   "plugins/datebox/jqm.simpledialog.min",
       gpretty_prettify:  "plugins/datebox/gpretty_prettify",
       //jio plugins
-      jio: "plugins/jio/jio",
-      md5: "plugins/jio/md5",
+      jio: "plugins/jio/jio.min",
+      md5: "plugins/jio/md5.min",
       response: "plugins/jio/response",
-      localstorage: "plugins/jio/localstorage",
-      revisionstorage: "plugins/jio/revisionstorage",
-      complex_queries: "plugins/jio/complex_queries",
-      overrides: "overrides",
+      localstorage: "plugins/jio/localstorage.min",
+      revisionstorage: "plugins/jio/revisionstorage.min",
+      complex_queries: "plugins/jio/complex_queries.min",
 			pmapi: "../pmapi"
     },
     shim: {
@@ -40,12 +39,11 @@
       "dbxI18nEnUsUtf": {deps: ["dateboxCoreMin"]},
       "dbxModeDateboxMin": {deps: ["dateboxCoreMin"]},
       "dbxModeCalboxMin": {deps: ["dateboxCoreMin"]},
-      "pmapi": {deps: ["jqm", "complex_queries", "dateboxCoreMin"]},
-      "overrides": {deps: ["jquery"]}
+      "pmapi": {deps: ["jqm", "complex_queries", "dateboxCoreMin"]}
     },
     map: {
 			"*": {
-				"css": "plugins/require-css/css"
+				"css": "plugins/require-css/css.min"
 			}
 		}
   });
@@ -66,16 +64,15 @@
       "localstorage",
       "revisionstorage",
       "complex_queries",
-      "overrides",
 			"css!../pmapi.css",
 			"css!plugins/jquerymobile/jquery.mobile-1.4.0",
 			"css!plugins/datebox/jqm-datebox.min.css",
 			"css!plugins/datebox/jquery.mobile.simpledialog.min.css",
-			"css!plugins/datebox/datebox.css",
+			"css!plugins/datebox/datebox.min",
       "pmapi"
     ],
     function () { 
-      console.log("2: main dependences loaded ");
+     // console.log("2: main dependences loaded ");
     }
   );
 }());

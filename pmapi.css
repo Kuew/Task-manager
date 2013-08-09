@@ -1,6 +1,4 @@
 @media (max-width: 480px) {
-
-
   .newtaskbutton {
     text-indent: -9999em;
   }
@@ -13,13 +11,13 @@
 
   /**************************************/
   /** RESPONSIBLE CSS FOR DETAILS PAGE **/
-
+/*
   #myResult {
-    border: 1px solid gray;
+    border: 2px solid #D3D3D3;
     margin: auto !important;
     background-color: gray;
   }
-
+*/
 
 		/* for date box*/
   .date .ui-input-text {
@@ -35,19 +33,6 @@
 	/******************************/
 	/**  END DETAILS RESPONSIBLE **/
 	/******************************/
-/*
-  input {
-    width: 30%;
-    padding: 5px;
-  }
-*/
-  div.input {
-    background: none repeat scroll 0 0 gray;
-  }
-
-  div.texta {
-    background: none repeat scroll 0 0 purple;
-  }
 
   i {
     color: gray;
@@ -74,11 +59,11 @@
 		  /**************************************/
 			/** RESPONSIBLE CSS FOR DETAILS PAGE **/
   #myResult {
-    border: 2px solid gray;
-    text-align: center;
+ /*   border: 2px solid #D3D3D3;*/
+   /* text-align: center;*/
     width: 45%;
     margin: auto;
-    background-color: gray;
+  /*  background-color: gray;*/
   }
 
 			/* for date box*/
@@ -118,14 +103,6 @@
     padding: 5px;
   }
 
-  div.input {
-    background: none repeat scroll 0 0 gray;
-  }
-
-  div.texta {
-    background: none repeat scroll 0 0 purple;
-  }
-
   i {
     color: brown;
     font-size: 0.8em;
@@ -152,12 +129,12 @@
 	/**************************************/
 	/** RESPONSIBLE CSS FOR DETAILS PAGE **/
   #myResult {
-    border: 1px solid gray;
-    text-align: center;
-    width: 35%;
-    margin: auto;
-    background-color: gray;
+  /*  border: 2px solid #D3D3D3;
+    margin: auto !important;*/
+    width: 32%;
+   /* background-color: gray;*/
   }
+
 	/* for date box*/
   .date .ui-input-text {
     display: block;
@@ -171,36 +148,23 @@
     width: auto;
   }
 
-  .ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
-    width: 90%;
-  }
-
   .ui-field-contain, .ui-mobile fieldset.ui-field-contain {
-    border: 2px solid;
     margin: 0.1em 0;
     padding: 0;
   }
-
-
-  .fieldcontain1.ui-field-contain.ui-body.ui-br {
-    border: 1px solid gray;
-    padding: 0.1em;
-    text-align: left;
-    width: 100%;
+  .ui-field-contain > label, .ui-field-contain .ui-controlgroup-label, .ui-field-contain > .ui-rangeslider > label {
+    float: left;
+    margin: 0.5em 2% 0 0;
+    width: 30% !important;
   }
-
+  .ui-field-contain > label + [class*="ui-"], .ui-field-contain .ui-controlgroup-controls {
+    -moz-box-sizing: border-box;
+    float: left;
+    width: 100% !important;
+}
 	/******************************/
 	/**  END DETAILS RESPONSIBLE **/
 	/******************************/
-
-  div.input {
-    background: none repeat scroll 0 0 gray;
-  }
-
-  div.texta {
-    background: none repeat scroll 0 0 purple;
-  }
-
   i {
     color: brown;
     font-size: 0.85em;
@@ -219,117 +183,118 @@
 /********************/
 
 
-
-
 /************************/
 /** CSS FOR EVERY PAGE**/
 
 .ui-btn-active {
   background: transparent;
+  background-color: gray !important;
 }
-
 .li-active {
   background: gray;
 }
-
 .ui-disabled, .ui-state-disabled, .ui-select .ui-btn.ui-state-disabled {
   cursor: default !important;
   opacity: 0.6 !important;
   pointer-events: none;
 }
-
+label {
+  color: #111111;
+  text-shadow: none !important;
+}
 /*** END ***/
 /***********/
 
-/**************************/
-/** begin  settings.html **/
+/***********************/
+/*** begin  settings ***/
 #settingscontentdiv {
+border: 2px solid gray;
   margin-top: 5%;
   margin-bottom: 5%;
   -webkit-border-radius: 3%;
   border-radius: 3%;
 }
-
+/*
 #projectsset {
   border: 0.05em solid gray;
 }
-
 #statesset {
   border: 0.05em solid gray;
-}
-
+}*/
 .controlsclass {
   text-align: right;
   padding: 0.8em;
   margin: 0.2em;
 }
+#settings {
+  background-color: #D3D3D3;
+}
+#settingscontentdiv .ui-controlgroup {
+    border: 1px solid gray;
+    margin: 0.5em 0;
+    padding: 0;
+}
 /** end settings **/
-/***********************/
+/******************/
 
-
-
-
-/**************************/
-/** CSS FOR DETAILS PAGE **/
-
-/* for date box*/
-.date .ui-input-text {
-  display: block;
-  width: 95% !important;
-  padding: 1px;
-}
-
-.ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
-  width: 90%;
-}
-
-.ui-field-contain, .ui-mobile fieldset.ui-field-contain {
-  margin: 0.1em 0;
-}
-
-/** END DETAILS **/
-/*****************/
-
-#mypopup {
-  margin: 0.1em;
-  padding: 0.1em;
+/*******************************/
+/******** begin details ********/
+#myResult {
+  border: 2px solid #D3D3D3;
+  margin: auto !important;
   background-color: gray;
 }
+.datediv {
+    clear: both;
+    display: block;
+    overflow: visible;
+    padding: 0.8em 0;
+    position: relative;
+    width: 80%;
+}
 
+#fieldcontain1 .ui-mobile label, #fieldcontain1 .ui-controlgroup-label {
+    margin: auto !important;
+}
+/*** end details ***/
+/*******************/
+
+/*******************************/
+/********* begin index *********/
+#sortbybtn .ui-btn-left {
+  font-size: 0.1em !important;
+}
+#sortbybtn > .indexhead {
+  margin: 0 29% !important;
+}
+#index .ui-content {
+    border: 2px solid #D3D3D3 !important;
+    padding: 0.5em !important;
+}
+/**** END INDEX ****/
+/*******************/
 .ui-disabled {
   border: 1px solid;
   z-index: 1;
 }
-
-.ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
-  width: 9em;
-}
-
-.ui-icon-datebox {
-  background-image: url("images/datebox.png") !important;
-  background-position: 98% 8px !important;
-  background-repeat: no-repeat !important;
-}
-
 .ui-popup {
   padding: 4px !important;
   position: relative !important;
 }
-
 .ui-field-contain, .ui-mobile fieldset.ui-field-contain {
   border-bottom-width: 0!important;
   margin: 0!important;
   padding: 0!important;
 }
-
+ 
 #projectpopup {
   background-color: gray;
-  max-width: 162px;
+  max-width: 160px;
 }
 
 #statepopup {
   background-color: gray;
-  max-width: 162px;
+  max-width: 160px;
 }
 /**project page***/
 .ui-collapsible-content {
@@ -338,6 +303,8 @@
   padding: 0;
 }
 
-body {
+/**** to fix transition issue ****/
+body, .ui-page {
     -webkit-backface-visibility: hidden;
 }
+

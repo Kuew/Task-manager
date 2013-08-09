@@ -10,15 +10,15 @@
   <body>
     <div data-role="page" id="index" data-theme="c">
        <!-- header-->
-      <div data-role="header" data-mini="true" data-inline="true">
-        <select name="sortby" id="sortby" data-inline="true" data-mini="true">
+      <div data-role="header" data-mini="true" data-inline="true" id="sortbybtn">
+        <a data-role="button"><select name="sortby" id="sortby" data-inline="true" data-mini="true">
           <option value="#">sort by</option>
           <option value="title">Title</option>
           <option value="begindate">Begin date</option>
           <option value="enddate">End date</option>
           <option value="state">State</option>
-        </select>
-        <H2>Task manager</H2>
+        </select></a>
+        <H2 class="indexhead">Task manager</H2>
         <a href="details.html" class="newtaskbutton ui-btn-right" data-icon="plus">New task</a>
       </div>
       <!-- content-->
@@ -28,10 +28,12 @@
       <!-- footer -->
       <div data-role="footer" class="ui-bar footercontent" data-mini="true" data-position="fixed">
         <div data-role="controlgroup" data-type="horizontal" data-mini="true">
-	        <a href="project.html" data-role="button" class="projectbutton" data-icon="arrow-u">Project</a>
+	        <a href="project.html" data-role="button" class="projectbutton" data-icon="arrow-l">Project</a>
 	        <a href="index.html" class="tasklistbutton ui-btn-active" data-icon="arrow-u" data-role="button" >Task</a>
 	        <a href="settings.html" data-role="button" class="settingsbutton" data-icon="gear">Settings</a>
+	        <!-- <a href="#" data-role="button" data-icon="check" class="logout">Save</a>-->
         </div>
+        
       </div>
     </div>
   </body>
