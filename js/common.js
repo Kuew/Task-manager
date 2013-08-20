@@ -13,7 +13,7 @@
 	 "complex_queries",
 	 "css",
 	 "css!../pmapi.css",
-	 "css!plugins/jquerymobile/jquery.mobile-1.4.0.css",
+	 "css!plugins/jquerymobile/jquery.mobile-1.3.2.css",
 	 "css!plugins/datebox/jqm-datebox.css",
 	 "overrides"
 	],

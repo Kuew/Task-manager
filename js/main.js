@@ -9,7 +9,7 @@
 			normalize: "plugins/require-css/normalize",
       //jquery and jqm plugin
       jquery:      "plugins/jquery/jquery-1.8.3",
-      jqm:         "plugins/jquerymobile/jquery.mobile-1.4.0",
+      jqm:         "plugins/jquerymobile/jquery.mobile-1.3.2",
 			text:   "plugins/text/text",
 			json:   "plugins/json/json",
 			datebox: "datebox",

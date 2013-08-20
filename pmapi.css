@@ -1,8 +1,8 @@
 @media (max-width: 480px) {
-  .newtaskbutton {
+ /* .newtaskbutton {
     text-indent: -9999em;
   }
-
+*/
   #settingscontentdiv {
     border: 1px solid gray;
     font-size: 0.5em !important;
@@ -11,14 +11,7 @@
 
   /**************************************/
   /** RESPONSIBLE CSS FOR DETAILS PAGE **/
-/*
-  #myResult {
-    border: 2px solid #D3D3D3;
-    margin: auto !important;
-    background-color: gray;
-  }
-*/
-
+/
 		/* for date box*/
   .date .ui-input-text {
     display: block;
@@ -214,33 +207,18 @@ border: 2px solid gray;
   -webkit-border-radius: 3%;
   border-radius: 3%;
 }
-/*
-#projectsset {
-  border: 0.05em solid gray;
-}
-#statesset {
-  border: 0.05em solid gray;
-}*/
-.controlsclass {
-  text-align: right;
-  padding: 0.8em;
-  margin: 0.2em;
-}
+
 #settings {
   background-color: #D3D3D3;
 }
-#settingscontentdiv .ui-controlgroup {
-    border: 1px solid gray;
-    margin: 0.5em 0;
-    padding: 0;
-}
+
 /** end settings **/
 /******************/
 
 /*******************************/
 /******** begin details ********/
 #myResult {
-  border: 2px solid #D3D3D3;
+  border: 1px solid #000000;
   margin: auto !important;
   background-color: gray;
 }
@@ -250,7 +228,7 @@ border: 2px solid gray;
     overflow: visible;
     padding: 0.8em 0;
     position: relative;
-    width: 80%;
+    width: 50%;
 }
 
 #fieldcontain1 .ui-mobile label, #fieldcontain1 .ui-controlgroup-label {
@@ -268,8 +246,11 @@ border: 2px solid gray;
   margin: 0 29% !important;
 }
 #index .ui-content {
-    border: 2px solid #D3D3D3 !important;
+    /*border: 2px solid #D3D3D3 !important;*/
     padding: 0.5em !important;
+}
+.ui-listview-filter .ui-input-search {
+    margin: 10px 5px 5px !important;
 }
 /**** END INDEX ****/
 /*******************/
