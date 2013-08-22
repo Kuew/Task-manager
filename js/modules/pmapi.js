@@ -1,23 +1,19 @@
 /*jslint unparam: true, maxlen: 80, indent: 2, nomen: true*/
 /*global jQuery, window, console, jIO, localStorage, alert, jQuery,
 setTimeout, insertstates, insertprojects, inserttasks, displaytasks, define,
-document, $, confirm, location, parent*/
+document, $, confirm, location, parent, inittasks*/
 (function () {
   "use strict";
   //console.log("1: pmapi file loaded");
-  var tasks = new Object(),
-    states = new Object(),
-    projects = new Object();
-  //   jQuery.extend(jQuery.mobile.datebox.prototype.options, {
-  //     'overrideDateFormat': '%d/%m/%Y',
-  //     'overrideHeaderFormat': '%d/%m/%Y'
-  //   });
-  //localStorage.clear();
-  var jio = jIO.newJio({
-    "type": "local",
-    "username": "Marco",
-    "application_name": "Marco_PM"
-  }),
+  var tasks = {},
+    states = {},
+    projects = {},
+    //localStorage.clear();
+    jio = jIO.newJio({
+      "type": "local",
+      "username": "Marco",
+      "application_name": "Marco_PM"
+    }),
     jio_state = jIO.newJio({
       "type": "local",
       "username": "Marco",
@@ -118,7 +114,7 @@ document, $, confirm, location, parent*/
         }
       });
     } else {
-      if (j === 1) { //j===0 ==> posting project
+      if (j === 1) { //j===1 ==> posting state
         jio_state.post(data[1][i], function (err, rep) {
           if (i === data[1].length - 1) {
             insertstaffs(0, 2);
@@ -128,7 +124,7 @@ document, $, confirm, location, parent*/
             });
           }
         });
-      } else {
+      } else { //j===2 ==> posting task
         jio.post(data[2][i], function (err, rep) {
           if (i === data[2].length - 1) {
             inittasks();
@@ -140,7 +136,7 @@ document, $, confirm, location, parent*/
         });
       }
     }
-  };
+  }
 
   function inittasks() {
     jio.allDocs({
@@ -168,13 +164,12 @@ document, $, confirm, location, parent*/
       }
     );
   }
-  if (Object.keys(tasks)
-    .length === 0) {
-    //console.log("memoire vide");
+  if (Object.keys(tasks).length === 0) {
+    console.log("memoire vide");
     if (typeof localStorage[
         "jio/localstorage/Marco/Marco_PM/T-5444"] !==
       "string") {
-      //console.log("Localstorage vide");
+      console.log("Localstorage vide");
       insertstaffs(0, 0);
     } else {
       inittasks();
@@ -194,7 +189,7 @@ document, $, confirm, location, parent*/
     for (i = 0; i < projects.rows.length; i++) {
       jio_project.put(projects.rows[i].doc);
     }
-    //console.log("staffs saved in localstorage");
+    console.log("staffs saved in localstorage");
   }
 
   function displaytasks() {
@@ -246,8 +241,6 @@ document, $, confirm, location, parent*/
         $("#sortby")
           .val("#")
           .selectmenu("refresh");
-        $(".ui-bar")
-          .trigger("create");
       });
     // ===================== element bindings ===========================
     //filtering matching list items on jIO  //comming soon
@@ -300,7 +293,7 @@ document, $, confirm, location, parent*/
     //the listview is reload, based for sort criteria selected
     $("#sortby")
       .change(function (e, data) {
-        //  console.log("chage trigerred");
+        console.log("change trigerred");
         var criteria = document.getElementById("sortby")
           .value,
           tasksorted = [],
@@ -370,7 +363,7 @@ document, $, confirm, location, parent*/
     /***************************************************************/
     $(document)
       .on("pagebeforeshow.projects", "#projects", function () {
-        ///  console.log("projects page loaded");
+        console.log("projects page loaded");
         // button states footer menu
         if ($('.settingsbutton')
           .hasClass('ui-btn-active')) {
@@ -433,7 +426,7 @@ document, $, confirm, location, parent*/
     /***************************************************************/
     $(document)
       .on("pagebeforeshow.settings", "#settings", function (e, data) {
-        //  console.log("settings page loaded");
+        console.log("settings page loaded");
         // button states footer menu
         if ($('.projectbutton')
           .hasClass('ui-btn-active')) {
@@ -581,7 +574,6 @@ document, $, confirm, location, parent*/
             return null;
           }
         }
-        // console.log(object._id);
         str = "<label><input type='checkbox' name='" + object.state +
           "' id='" +
           object._id + "' class='costum'/>" + object.state +
@@ -769,7 +761,7 @@ document, $, confirm, location, parent*/
     }
     $(document)
       .on("pagebeforeshow.details", "#details", function (e, data) {
-        //   console.log("details page loaded");
+        console.log("details page loaded");
         var obj = $.mobile.path.parseUrl(location.href),
           ch = obj.search,
           statestr = "",
@@ -799,7 +791,7 @@ document, $, confirm, location, parent*/
         }
         projectstr += "</select>";
         if (ch.length === 0) { // New task
-          //     console.log("new task");
+          console.log("new task");
           str =
             "<form><div data-role='fieldcontain' data-mini='true'>" +
             "<input type='text' id='title' name='title' " +
@@ -833,7 +825,7 @@ document, $, confirm, location, parent*/
             .append(str)
             .trigger("create");
         } else { //edition task
-          //     console.log("editing task");
+          console.log("editing task");
           params = ch.split('?')[1];
           attArray = params.split('=');
           i = 0;
@@ -934,7 +926,6 @@ document, $, confirm, location, parent*/
             "key": object._id,
             "doc": object
           });
-          //    console.log(tasks);
           document.getElementById("title")
             .value = "";
           $("#project")
@@ -990,17 +981,10 @@ document, $, confirm, location, parent*/
         }
         return false;
       });
-    //form removing a given task
-    $(document)
-      .on("click", ".logout", function (e, data) {
-        savestaffs();
-        location.href = "http://www.google.com";
-      });
     $(window)
       .on('beforeunload', function () {
         savestaffs();
       });
-    console.log("now we init jqm")
     $.mobile.initializePage();
   }
 }());

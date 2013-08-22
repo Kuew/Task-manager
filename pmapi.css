@@ -1,173 +1,173 @@
 @media (max-width: 480px) {
- /* .newtaskbutton {
-    text-indent: -9999em;
-  }
+	/* .newtaskbutton {
+	 *    text-indent: -9999em;
+}
 */
-  #settingscontentdiv {
-    border: 1px solid gray;
-    font-size: 0.5em !important;
-    margin: auto !important;
-  }
-
-  /**************************************/
-  /** RESPONSIBLE CSS FOR DETAILS PAGE **/
-/
-		/* for date box*/
-  .date .ui-input-text {
-    display: block;
-    width: 95% !important;
-    padding: 1px;
-  }
-
-  .ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
-    width: 90%;
-  }
-
-	/******************************/
-	/**  END DETAILS RESPONSIBLE **/
-	/******************************/
-
-  i {
-    color: gray;
-    font-size: 0.75em;
-  }
-
-  .myspan {
-    color: green;
-    font-size: 0.75em;
-  }
-
-  .titleSpan {
-    font-size: 0.8em;
-  };
+	#settingscontentdiv {
+		border: 1px solid gray;
+		font-size: 0.5em !important;
+		margin: auto !important;
+	}
+	
+	  /**************************************/
+		/** RESPONSIBLE CSS FOR DETAILS PAGE **/
+		/
+				/* for date box*/
+				.date .ui-input-text {
+					display: block;
+					width: 95% !important;
+					padding: 1px;
+				}
+				
+				  .ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
+						width: 90%;
+					}
+					
+						/******************************/
+						/**  END DETAILS RESPONSIBLE **/
+						/******************************/
+						
+						i {
+							color: gray;
+							font-size: 0.75em;
+						}
+						
+						  .myspan {
+								color: green;
+								font-size: 0.75em;
+							}
+							
+							  .titleSpan {
+									font-size: 0.8em;
+								};
 }
 
 @media (min-width: 481px) and (max-width: 720px) {
-  #settingscontentdiv {
-			/* background: none repeat scroll 0 0;*/
-    border: 1px solid gray;
-    width: 55%;
-    margin: auto;
-  }
-		  /**************************************/
-			/** RESPONSIBLE CSS FOR DETAILS PAGE **/
-  #myResult {
- /*   border: 2px solid #D3D3D3;*/
-   /* text-align: center;*/
-    width: 45%;
-    margin: auto;
-  /*  background-color: gray;*/
-  }
-
-			/* for date box*/
-  .date .ui-input-text {
-    display: block;
-    width: 95% !important;
-    border: 0 solid;
-    padding: 1px;
-  }
-
-  .ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
-    width: 90%;
-  }
-
-  .ui-field-contain, .ui-mobile fieldset.ui-field-contain {
-    margin: auto;
-  }
-
- 
-
-  .fieldcontain1.ui-field-contain.ui-body.ui-br {
-    border: 1px solid gray;
-    padding: 0.8em;
-    text-align: left;
-    width: 95%;
-  }
-
-
-  
-  
-	/******************************/
-	/**  END DETAILS RESPONSIBLE **/
-	/******************************/
-
-  input {
-    width: 30%;
-    padding: 5px;
-  }
-
-  i {
-    color: brown;
-    font-size: 0.8em;
-  }
-
-  .myspan {
-    color: green;
-    font-size: 0.8em;
-  }
-
-  .titleSpan {
-    font-size: 0.85em;
-  };
+	#settingscontentdiv {
+		/* background: none repeat scroll 0 0;*/
+		border: 1px solid gray;
+		width: 55%;
+		margin: auto;
+	}
+			  /**************************************/
+				/** RESPONSIBLE CSS FOR DETAILS PAGE **/
+				#myResult {
+					/*   border: 2px solid #D3D3D3;*/
+					/* text-align: center;*/
+					width: 45%;
+					margin: auto;
+					/*  background-color: gray;*/
+				}
+				
+							/* for date box*/
+							.date .ui-input-text {
+								display: block;
+								width: 95% !important;
+								border: 0 solid;
+								padding: 1px;
+							}
+							
+							  .ui-input-text.ui-body-c.ui-corner-all.ui-icon-datebox {
+									width: 90%;
+								}
+								
+								  .ui-field-contain, .ui-mobile fieldset.ui-field-contain {
+										margin: auto;
+									}
+									
+									 
+									 
+									   .fieldcontain1.ui-field-contain.ui-body.ui-br {
+											 border: 1px solid gray;
+											 padding: 0.8em;
+											 text-align: left;
+											 width: 95%;
+										 }
+										 
+										 
+										   
+										     
+										     	/******************************/
+													/**  END DETAILS RESPONSIBLE **/
+													/******************************/
+													
+													input {
+														width: 30%;
+														padding: 5px;
+													}
+													
+													  i {
+															color: brown;
+															font-size: 0.8em;
+														}
+														
+														  .myspan {
+																color: green;
+																font-size: 0.8em;
+															}
+															
+															  .titleSpan {
+																	font-size: 0.85em;
+																};
 }
 
 @media (min-width: 721px) {
-
-  #settingscontentdiv {
-    border: 1px solid gray;
-    width: 30%;
-    margin: auto;
-  }
-
-	/**************************************/
-	/** RESPONSIBLE CSS FOR DETAILS PAGE **/
-  #myResult {
-    width: 32%;
-  }
-
-	/* for date box*/
-  .date .ui-input-text {
-    display: block;
-    width: 100% !important;
-    border: 0 solid;
-    padding: 1px;
-  }
-
-  .cg .ui-controlgroup-controls {
-    display: inline-block;
-    width: auto;
-  }
-
-  .ui-field-contain, .ui-mobile fieldset.ui-field-contain {
-    margin: 0.1em 0;
-    padding: 0;
-  }
-  .ui-field-contain > label, .ui-field-contain .ui-controlgroup-label, .ui-field-contain > .ui-rangeslider > label {
-    float: left;
-    margin: 0.5em 2% 0 0;
-    width: 30% !important;
-  }
-  .ui-field-contain > label + [class*="ui-"], .ui-field-contain .ui-controlgroup-controls {
-    -moz-box-sizing: border-box;
-    float: left;
-    width: 100% !important;
-}
-	/******************************/
-	/**  END DETAILS RESPONSIBLE **/
-	/******************************/
-  i {
-    color: brown;
-    font-size: 0.85em;
-  }
-
-  .myspan {
-    color: green;
-    font-size: 0.85em;
-  }
-
-  .titleSpan {
-    font-size: 1em;
-  };
+	
+	#settingscontentdiv {
+		border: 1px solid gray;
+		width: 30%;
+		margin: auto;
+	}
+	
+		/**************************************/
+		/** RESPONSIBLE CSS FOR DETAILS PAGE **/
+		#myResult {
+			width: 32%;
+		}
+		
+			/* for date box*/
+			.date .ui-input-text {
+				display: block;
+				width: 100% !important;
+				border: 0 solid;
+				padding: 1px;
+			}
+			
+			  .cg .ui-controlgroup-controls {
+					display: inline-block;
+					width: auto;
+				}
+				
+				  .ui-field-contain, .ui-mobile fieldset.ui-field-contain {
+						margin: 0.1em 0;
+						padding: 0;
+					}
+					  .ui-field-contain > label, .ui-field-contain .ui-controlgroup-label, .ui-field-contain > .ui-rangeslider > label {
+							float: left;
+							margin: 0.5em 2% 0 0;
+							width: 30% !important;
+						}
+						  .ui-field-contain > label + [class*="ui-"], .ui-field-contain .ui-controlgroup-controls {
+								-moz-box-sizing: border-box;
+								float: left;
+								width: 100% !important;
+							}
+								/******************************/
+								/**  END DETAILS RESPONSIBLE **/
+								/******************************/
+								i {
+									color: brown;
+									font-size: 0.85em;
+								}
+								
+								  .myspan {
+										color: green;
+										font-size: 0.85em;
+									}
+									
+									  .titleSpan {
+											font-size: 1em;
+										};
 }
 /** end media query**/
 /********************/
@@ -177,20 +177,20 @@
 /** CSS FOR EVERY PAGE**/
 
 .ui-btn-active {
-  background: transparent;
-  background-color: gray !important;
+	background: transparent;
+	background-color: gray !important;
 }
 .li-active {
-  background: gray;
+	background: gray;
 }
 .ui-disabled, .ui-state-disabled, .ui-select .ui-btn.ui-state-disabled {
-  cursor: default !important;
-  opacity: 0.6 !important;
-  pointer-events: none;
+	cursor: default !important;
+	opacity: 0.6 !important;
+	pointer-events: none;
 }
 label {
-  color: #111111;
-  text-shadow: none !important;
+	color: #111111;
+	text-shadow: none !important;
 }
 /*** END ***/
 /***********/
@@ -198,15 +198,15 @@ label {
 /***********************/
 /*** begin  settings ***/
 #settingscontentdiv {
-border: 2px solid gray;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  -webkit-border-radius: 3%;
-  border-radius: 3%;
+	border: 2px solid gray;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	-webkit-border-radius: 3%;
+	border-radius: 3%;
 }
 
 #settings {
-  background-color: #D3D3D3;
+	background-color: #D3D3D3;
 }
 
 /** end settings **/
@@ -215,74 +215,75 @@ border: 2px solid gray;
 /*******************************/
 /******** begin details ********/
 #myResult {
-  border: 1px solid #000000;
-  margin: auto !important;
-  background-color: gray;
+	border: 1px solid #000000;
+	margin: auto !important;
+}
+#myResult label {
+	color: gray !important;
 }
 .datediv {
-    clear: both;
-    display: block;
-    overflow: visible;
-    padding: 0.8em 0;
-    position: relative;
-    width: 50%;
+	clear: both;
+	display: block;
+	overflow: visible;
+	padding: 0.8em 0;
+	position: relative;
+	width: 50%;
 }
-
+#myResult textarea {
+  width: 75% !important;
+  height: 75px !important;
+}
 #fieldcontain1 .ui-mobile label, #fieldcontain1 .ui-controlgroup-label {
-    margin: auto !important;
+	margin: auto !important;
 }
 /*** end details ***/
 /*******************/
 
 /*******************************/
 /********* begin index *********/
-#sortbybtn .ui-btn-left {
-  font-size: 0.1em !important;
-}
-#sortbybtn > .indexhead {
-  margin: 0 29% !important;
-}
+
 #index .ui-content {
-    /*border: 2px solid #D3D3D3 !important;*/
-    padding: 0.5em !important;
+	/*border: 2px solid #D3D3D3 !important;*/
+	padding: 0.5em !important;
 }
 .ui-listview-filter .ui-input-search {
-    margin: 10px 5px 5px !important;
+	margin: 10px 5px 5px !important;
 }
 /**** END INDEX ****/
 /*******************/
 .ui-disabled {
-  border: 1px solid;
-  z-index: 1;
+	border: 1px solid;
+	z-index: 1;
 }
 .ui-popup {
-  padding: 4px !important;
-  position: relative !important;
+	padding: 4px !important;
+	position: relative !important;
 }
 .ui-field-contain, .ui-mobile fieldset.ui-field-contain {
-  border-bottom-width: 0!important;
-  margin: 0!important;
-  padding: 0!important;
+	border-bottom-width: 0!important;
+	margin: 0!important;
+	padding: 0!important;
 }
  
-#projectpopup {
-  background-color: gray;
-  max-width: 160px;
-}
-
-#statepopup {
-  background-color: gray;
-  max-width: 160px;
-}
-/**project page***/
-.ui-collapsible-content {
-  background-image: none;
-  border-top-width: 0;
-  padding: 0;
-}
-
-/**** to fix transition issue ****/
-body, .ui-page {
-    -webkit-backface-visibility: hidden;
-}
-
+ #projectpopup {
+	 background-color: gray;
+	 max-width: 160px;
+ }
+ 
+ #statepopup {
+	 background-color: gray;
+	 max-width: 160px;
+ }
+ /**project page***/
+ .ui-collapsible-content {
+	 background-image: none;
+	 border-top-width: 0;
+	 padding: 0;
+ }
+ 
+ /**** to fix transition issue ****/
+ body, .ui-page {
+	 -webkit-backface-visibility: hidden;
+ }
+ 
+ 

@@ -1,53 +1,49 @@
-﻿/*jslint nomen: true, plusplus: true, unparam: true */
-/*indent: 2, maxlen: 80, define: true */
+﻿/*jslint nomen: true, unparam: true, indent: 2, maxlen: 80*/
+/*global define: true */
 (function () {
   "use strict";
   require.config({
-  //  waitSeconds :  (IS_LOCAL? 10 : 45),
+    //  waitSeconds :  (IS_LOCAL? 10 : 45),
     paths: {
-			css: "plugins/require-css/css",
-			normalize: "plugins/require-css/normalize",
-      //jquery and jqm plugin
-      jquery:      "plugins/jquery/jquery-1.8.3",
-      jqm:         "plugins/jquerymobile/jquery.mobile-1.3.2",
-			text:   "plugins/text/text",
-			json:   "plugins/json/json",
-			datebox: "datebox",
-      //datebox plugin
-      dbxModeDatebox: "plugins/datebox/jqm-datebox.mode.datebox",
-      dbxModeCalbox: "plugins/datebox/jqm-datebox.mode.calbox",
-      dbxI18nEnUsUtf: "plugins/datebox/jqm.datebox.i18n.en_US.utf8",
-      //jio plugins
-      jio: "plugins/jio/jio",
-      md5: "plugins/jio/md5",
-      response: "plugins/jio/response",
-      localstorage: "plugins/jio/localstorage",
-      revisionstorage: "plugins/jio/revisionstorage",
-      complex_queries: "plugins/jio/complex_queries",
-      overrides: "overrides",
-			common: "common",
-			pmapi: "pmapi"
+      //plugins (require-css, text, json)
+      css:             "plugins/requirejs-plugins/require-css/css",
+      normalize:       "plugins/requirejs-plugins/require-css/normalize",
+      text:            "plugins/requirejs-plugins/text/text",
+      json:            "plugins/requirejs-plugins/json/json",
+      //librairies (jquery, jquery mobile, jio)
+      jquery:          "lib/jquery/jquery-1.8.3",
+      jqm:             "lib/jquerymobile/jquery.mobile-1.3.2",
+      jio:             "lib/jio/jio",
+      md5:             "lib/jio/md5",
+      response:        "lib/jio/response",
+      localstorage:    "lib/jio/localstorage",
+      revisionstorage: "lib/jio/revisionstorage",
+      complex_queries: "lib/jio/complex_queries",
+      //modules(datebox as module, overrides, common, pmapi)
+      datebox:         "modules/datebox",
+      overrides:       "modules/overrides",
+      common:          "modules/common",
+      pmapi:           "modules/pmapi"
     },
     shim: {
       "jio": {deps: ["md5"]},
-			"jquery": {exports: "$"},
+      "jquery": {exports: "$"},
       "localstorage": {deps: ["jio"]},
       "revisionstorage": {deps: ["jio"]},
-      "complex_queries": {deps: ["jio"]},
+      "complex_queries": {deps: ["jio"]}, //a revoir
       "jqm":     { deps: ["jquery"], exports: "mobile" },
-      "dbxI18nEnUsUtf": {deps: ["datebox"]},
-			"dbxModeDatebox": {deps: ["datebox"]},
-			"dbxModeCalbox": {deps: ["datebox"]},
       "overrides": {deps: ["jquery"]},
-			"pmapi": {deps: ["complex_queries", "datebox"]}
+      "pmapi": {deps: ["complex_queries", "datebox"]}
     },
     map: {
       "*": {
-	      "css": "plugins/require-css/css"
+        "css": "plugins/requirejs-plugins/require-css/css"
       }
     }
-  });
-	define(["common"],
+  }
+    );
+  define(
+    ["common"],
     function () {
       console.log("2: main dependences loaded ");
     }

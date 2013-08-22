@@ -1,0 +1,59 @@
+﻿[
+      [
+        {"_id": "PR-1", "project": "Daily activity"},
+        {"_id": "PR-2", "project": "Weekly activity"},
+        {"_id": "PR-3", "project": "Weekend activity"}
+      ],
+      [
+        { "_id": "ST-1", "state": "started"},
+        {"_id": "ST-2", "state": "continues"},
+        {"_id": "ST-3", "state": "complete"}
+      ],
+      [
+        {
+          "_id": "T-5444",
+          "title": "Jquery mobile learning",
+          "project": "Daily activity",
+          "begindate": "20/05/2013",
+          "enddate": "16/11/2013",
+          "state": "continues",
+          "description": "some description ..."
+        },
+        {
+          "_id": "T-5446",
+          "title": "Create a jQuery Mobile Task Manager",
+          "project": "Weekly activity",
+          "begindate": "01/06/2013",
+          "enddate": "30/06/2013",
+          "state": "started",
+          "description": "task manager app with JQM"
+        },
+        {
+          "_id": "T-5447",
+          "title": "Going to the restaurent",
+          "project": "Weekend activity",
+          "begindate": "11/07/2013",
+          "enddate": "12/07/2013",
+          "state": "complete",
+          "description": "task on jQuery"
+        },
+        {
+          "_id": "T-5448",
+          "title": "Going to shopping",
+          "project": "Weekend activity",
+          "begindate": "11/07/2013",
+          "enddate": "13/08/2013",
+          "state": "complete",
+          "description": "task on jQuery"
+        },
+        {
+          "_id": "T-5449",
+          "title": "Writting test module",
+          "project": "Weekly activity",
+          "begindate": "15/07/2013",
+          "enddate": "30/07/2013",
+          "state": "continues",
+          "description": "test module for jQuery"
+        }
+      ]
+    ]
