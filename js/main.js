@@ -1,5 +1,3 @@
-﻿/*jslint nomen: true, unparam: true, indent: 2, maxlen: 80*/
-/*global define: true */
 (function () {
   "use strict";
   require.config({

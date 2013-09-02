@@ -1,6 +1,3 @@
-/*jslint indent: 2, plusplus: true, maxlen: 80, nomen: true */
-/*global document, require, $, define, window, navigator, */
-/*jQuery */
 define([
   'jquery',
   'jqm'

@@ -1,5 +1,3 @@
-﻿/*jslint maxlen: 80, indent: 2, nomen: true*/
-/*global define, require, console, jQuery*/
 define(
   [
     "jquery",
